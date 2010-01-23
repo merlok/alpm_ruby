@@ -1,0 +1,17 @@
+<% form_for :sign, :html => { :method => :put, :class => "check_form", :id => "check_form" } do |format| -%>
+<div id=main>   
+   <% metodi[:sign].each do |i| %>
+          <%= format.check_box(i[0],{:checked => (i[1]=="yes")}, "yes", "no" ) %> <%= i[1] %> <br>
+   
+   <% end  %>
+  
+  <%# signs.each do |value| %>
+        <%#= format.check_box(value["n_pack"], {:checked => value["flag"]}, "yes", "no") %> <%#= value["n_pack"] %><br>
+    <%# end %>
+</div>
+<% end -%>
+
+    <h1> return post </h1>
+    <% metodi[:sign].each do |i| %>
+          <%= i[0] %> - <%= i[1] %> <br>
+    <% end  %>

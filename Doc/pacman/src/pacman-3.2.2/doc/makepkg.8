@@ -1,0 +1,408 @@
+.\"     Title: makepkg
+.\"    Author: [see the "Authors" section]
+.\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
+.\"      Date: 2009-01-05
+.\"    Manual: Pacman Manual
+.\"    Source: Pacman 3.2.2
+.\"  Language: English
+.\"
+.TH "MAKEPKG" "8" "2009\-01\-05" "Pacman 3\&.2\&.2" "Pacman Manual"
+.\" -----------------------------------------------------------------
+.\" * (re)Define some macros
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" toupper - uppercase a string (locale-aware)
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de toupper
+.tr aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ
+\\$*
+.tr aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH-xref - format a cross-reference to an SH section
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de SH-xref
+.ie n \{\
+.\}
+.toupper \\$*
+.el \{\
+\\$*
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH - level-one heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SH
+.\" put an extra blank line of space above the head in non-TTY output
+.if t \{\
+.sp 1
+.\}
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[an-margin]u
+.ti 0
+.HTML-TAG ".NH \\n[an-level]"
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+\." make the size of the head bigger
+.ps +3
+.ft B
+.ne (2v + 1u)
+.ie n \{\
+.\" if n (TTY output), use uppercase
+.toupper \\$*
+.\}
+.el \{\
+.nr an-break-flag 0
+.\" if not n (not TTY), use normal case (not uppercase)
+\\$1
+.in \\n[an-margin]u
+.ti 0
+.\" if not n (not TTY), put a border/line under subheading
+.sp -.6
+\l'\n(.lu'
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SS - level-two heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SS
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[IN]u
+.ti \\n[SN]u
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.ps \\n[PS-SS]u
+\." make the size of the head bigger
+.ps +2
+.ft B
+.ne (2v + 1u)
+.if \\n[.$] \&\\$*
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BB/BE - put background/screen (filled box) around block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BB
+.if t \{\
+.sp -.5
+.br
+.in +2n
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EB
+.if t \{\
+.if "\\$2"adjust-for-leading-newline" \{\
+.sp -1
+.\}
+.br
+.di
+.in
+.ll
+.gcolor
+.nr BW \\n(.lu-\\n(.i
+.nr BH \\n(dn+.5v
+.ne \\n(BHu+.5v
+.ie "\\$2"adjust-for-leading-newline" \{\
+\M[\\$1]\h'1n'\v'+.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.el \{\
+\M[\\$1]\h'1n'\v'-.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.in 0
+.sp -.5v
+.nf
+.BX
+.in
+.sp .5v
+.fi
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BM/EM - put colored marker in margin next to block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BM
+.if t \{\
+.br
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EM
+.if t \{\
+.br
+.di
+.ll
+.gcolor
+.nr BH \\n(dn
+.ne \\n(BHu
+\M[\\$1]\D'P -.75n 0 0 \\n(BHu -(\\n[.i]u - \\n(INu - .75n) 0 0 -\\n(BHu'\M[]
+.in 0
+.nf
+.BX
+.in
+.fi
+.\}
+..
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "Name"
+makepkg \- package build utility
+.SH "Synopsis"
+.sp
+makepkg [options]
+.SH "Description"
+.sp
+makepkg is a script to automate the building of packages\&. The requirements for using the script are a build\-capable \e*nix platform and a custom build script for each package you wish to build (known as a PKGBUILD)\&. See linkman:PKGBUILD[5] for details on creating your own build scripts\&.
+.sp
+The advantage to a script\-based build is that the work is only done once\&. Once you have the build script for a package, makepkg will do the rest: download and validate source files, check dependencies, configure the build\-time settings, build the package, install the package into a temporary root, make customizations, generate meta\-info, and package the whole thing up for pacman to use\&.
+.if n \{\
+.sp
+.\}
+.RS 4
+.BM yellow
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBNote\fR
+.ps -1
+.br
+.sp
+makepkg uses your current locale by default and does not unset it when building packages\&. If you wish to share your build output with others when seeking help or for other purposes, you may wish to run "\FCLC_ALL=C makepkg\F[]" so your logs and output are not localized\&.
+.sp .5v
+.EM yellow
+.RE
+.SH "Options"
+.PP
+\fB\-\-asroot\fR
+.RS 4
+Allow makepkg to run as root\&. This is for security purposes as it is normally dangerous to do so\&. This will also disable use of fakeroot and sudo\&.
+.RE
+.PP
+\fB\-A, \-\-ignorearch\fR
+.RS 4
+Ignore a missing or incomplete arch field in the build script\&. This is for rebuilding packages from source when the PKGBUILD may be slightly outdated and not updated with an
+\FCarch=(\'yourarch\')\F[]
+field\&.
+.RE
+.PP
+\fB\-c, \-\-clean\fR
+.RS 4
+Clean up leftover work files and directories after a successful build\&.
+.RE
+.PP
+\fB\-C, \-\-cleancache\fR
+.RS 4
+Removes all cached source files from the directory specified in
+\FCSRCDEST\F[]
+in linkman:makepkg\&.conf[5]\&.
+.RE
+.PP
+\fB\-d, \-\-nodeps\fR
+.RS 4
+Do not perform any dependency checks\&. This will let you override and ignore any dependencies required\&. There is a good chance this option will break the build process if all of the dependencies are not installed\&.
+.RE
+.PP
+\fB\-e, \-\-noextract\fR
+.RS 4
+Do not extract source files; use whatever source already exists in the src/ directory\&. This is handy if you want to go into src/ and manually patch or tweak code, then make a package out of the result\&. Keep in mind that creating a patch may be a better solution to allow others to use your PKGBUILD\&.
+.RE
+.PP
+\fB\-f, \-\-force\fR
+.RS 4
+makepkg will not build a package if a built package already exists in the
+\FCPKGDEST\F[]
+(set in linkman:makepkg\&.conf[5]) directory, which may default to the current directory\&. This allows the built package to be overwritten\&.
+.RE
+.PP
+\fB\-\-forcever\fR
+.RS 4
+This is a hidden option that should
+\fBnot\fR
+be used unless you really know what you are doing\&. makepkg uses this internally when calling itself to set the new development pkgver of the package\&.
+.RE
+.PP
+\fB\-g, \-\-geninteg\fR
+.RS 4
+For each source file in the source array of PKGBUILD, download the file if required and generate integrity checks\&. The integrity checks generated are determined by the value of the INTEGRITY_CHECK array in linkman:makepkg\&.conf[5]\&. This output can be redirected into your PKGBUILD for source validation using "\FCmakepkg \-g >> PKGBUILD\F[]"\&.
+.RE
+.PP
+\fB\-h, \-\-help\fR
+.RS 4
+Output syntax and command line options\&.
+.RE
+.PP
+\fB\-\-holdver\fR
+.RS 4
+Useful when building development versions of packages\&. Prevents makepkg from automatically bumping the pkgver to the latest revision number in the package\(cqs development tree\&.
+.RE
+.PP
+\fB\-i, \-\-install\fR
+.RS 4
+Install or upgrade the package after a successful build using linkman:pacman[8]\&.
+.RE
+.PP
+\fB\-L, \-\-log\fR
+.RS 4
+Enable makepkg build logging\&. This will use the
+\fBtee\fR
+program to send output of the
+\FCbuild()\F[]
+function to both the console and to a text file in the build directory named
+\FCpkgname\-pkgver\-pkgrel\-arch\&.log\F[]\&. As mentioned above, the build log will be localized so you may want to set your locale accordingly if sharing the log output with others\&.
+.RE
+.PP
+\fB\-m, \-\-nocolor\fR
+.RS 4
+Disable color in output messages\&.
+.RE
+.PP
+\fB\-o, \-\-nobuild\fR
+.RS 4
+Download and extract files only, but do not build them\&. Useful with the
+\FC\-\-noextract\F[]
+option if you wish to tweak the files in src/ before building\&.
+.RE
+.PP
+\fB\-p\fR <\FCbuildscript\F[]>
+.RS 4
+Read the package script
+\FCbuildscript\F[]
+instead of the
+\FCPKGBUILD\F[]
+default; see linkman:PKGBUILD[5]\&.
+.RE
+.PP
+\fB\-r, \-\-rmdeps\fR
+.RS 4
+Upon successful build, remove any dependencies installed by makepkg during dependency auto\-resolution and installation when using
+\FC\-s\F[]\&.
+.RE
+.PP
+\fB\-R, \-\-repackage\fR
+.RS 4
+Repackage contents of pkg/ without rebuilding the package\&. This is useful if you forgot a depend or install file in your PKGBUILD and the build itself will not change\&.
+.RE
+.PP
+\fB\-s, \-\-syncdeps\fR
+.RS 4
+Install missing dependencies using pacman\&. When build\-time or run\-time dependencies are not found, pacman will try to resolve them\&. If successful, the missing packages will be downloaded and installed\&.
+.RE
+.PP
+\fB\-\-allsource\fR
+.RS 4
+Do not actually build the package, but build a source\-only tarball that includes all sources, including those that are normally download via makepkg\&. This is useful for passing a single tarball to another program such as a chroot or remote builder\&. It will also satisfy requirements of the GPL when distributing binary packages\&.
+.RE
+.PP
+\fB\-\-source\fR
+.RS 4
+Do not actually build the package, but build a source\-only tarball that does not include sources that can be fetched via a download URL\&. This is useful for passing a single tarball to another program such as a chroot, remote builder, or a tarball upload\&.
+.RE
+.PP
+\fB\-\-noconfirm\fR
+.RS 4
+(Passed to pacman) Prevent pacman from waiting for user input before proceeding with operations\&.
+.RE
+.PP
+\fB\-\-noprogressbar\fR
+.RS 4
+(Passed to pacman) Prevent pacman from displaying a progress bar; useful if you are redirecting makepkg output to file\&.
+.RE
+.SH "Additional Features"
+.sp
+makepkg supports building development versions of packages without having to manually update the pkgver in the PKGBUILD\&. This was formerly done using the separate utility \fIversionpkg\fR\&. See linkman:PKGBUILD[5] for details on how to set up a development PKGBUILD\&.
+.SH "Configuration"
+.sp
+See linkman:makepkg\&.conf[5] for more details on configuring makepkg using the \fImakepkg\&.conf\fR file\&.
+.SH "See Also"
+.sp
+linkman:makepkg\&.conf[5], linkman:PKGBUILD[5], linkman:pacman[8]
+.sp
+See the pacman website at http://www\&.archlinux\&.org/pacman/ for current information on pacman and its related tools\&.
+.SH "Bugs"
+.sp
+Bugs? You must be kidding, there are no bugs in this software\&. But if we happen to be wrong, send us an email with as much detail as possible to pacman\-dev@archlinux\&.org\&.
+.SH "Authors"
+.sp
+Current maintainers:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Dan McGee <dan@archlinux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Xavier Chantry <shiningxc@gmail\&.com>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aaron Griffin <aaron@archlinux\&.org>
+.RE
+.sp
+Past contributors:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Judd Vinet <jvinet@zeroflux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aurelien Foret <aurelien@archlinux\&.org>
+.RE
+.sp
+See the \fIAUTHORS\fR file for additional contributors\&.

@@ -1,0 +1,1639 @@
+# English (British) translations for Pacman package manager package.
+# Copyright (C) 2007 Judd Vinet <jvinet@zeroflux.org>
+# This file is distributed under the same license as the Pacman package manager package.
+# Jeff Bailes <thepizzaking@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Pacman package manager 3.0.0\n"
+"Report-Msgid-Bugs-To: pacman-dev@archlinux.org\n"
+"POT-Creation-Date: 2009-01-02 22:24-0600\n"
+"PO-Revision-Date: 2008-07-30 08:31+0200\n"
+"Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
+"Language-Team: English <en_gb@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, c-format
+msgid "checking dependencies...\n"
+msgstr "checking dependencies...\n"
+
+#, c-format
+msgid "checking for file conflicts...\n"
+msgstr "checking for file conflicts...\n"
+
+#, c-format
+msgid "resolving dependencies...\n"
+msgstr "resolving dependencies...\n"
+
+#, c-format
+msgid "looking for inter-conflicts...\n"
+msgstr "looking for inter-conflicts...\n"
+
+#, c-format
+msgid "installing %s...\n"
+msgstr "installing %s...\n"
+
+#, c-format
+msgid "removing %s...\n"
+msgstr "removing %s...\n"
+
+#, c-format
+msgid "upgrading %s...\n"
+msgstr "upgrading %s...\n"
+
+#, c-format
+msgid "checking package integrity...\n"
+msgstr "checking package integrity...\n"
+
+#, c-format
+msgid "checking delta integrity...\n"
+msgstr "checking delta integrity...\n"
+
+#, c-format
+msgid "applying deltas...\n"
+msgstr "applying deltas...\n"
+
+#, c-format
+msgid "generating %s with %s... "
+msgstr "generating %s with %s... "
+
+#, c-format
+msgid "success!\n"
+msgstr "success!\n"
+
+#, c-format
+msgid "failed.\n"
+msgstr "failed.\n"
+
+#, c-format
+msgid ":: Retrieving packages from %s...\n"
+msgstr ":: Retrieving packages from %s...\n"
+
+#, c-format
+msgid ""
+":: %s requires installing %s from IgnorePkg/IgnoreGroup. Install anyway?"
+msgstr ""
+":: %s requires installing %s from IgnorePkg/IgnoreGroup. Install anyway?"
+
+#, c-format
+msgid ":: %s is in IgnorePkg/IgnoreGroup. Install anyway?"
+msgstr ":: %s is in IgnorePkg/IgnoreGroup. Install anyway?"
+
+#, c-format
+msgid ":: %s is designated as a HoldPkg. Remove anyway?"
+msgstr ":: %s is designated as a HoldPkg. Remove anyway?"
+
+#, c-format
+msgid ":: Replace %s with %s/%s?"
+msgstr ":: Replace %s with %s/%s?"
+
+#, c-format
+msgid ":: %s conflicts with %s. Remove %s?"
+msgstr ":: %s conflicts with %s. Remove %s?"
+
+#, c-format
+msgid ":: %s-%s: local version is newer. Upgrade anyway?"
+msgstr ":: %s-%s: local version is newer. Upgrade anyway?"
+
+#, c-format
+msgid ":: File %s is corrupted. Do you want to delete it?"
+msgstr ":: File %s is corrupted. Do you want to delete it?"
+
+#, c-format
+msgid "installing"
+msgstr "installing"
+
+#, c-format
+msgid "upgrading"
+msgstr "upgrading"
+
+#, c-format
+msgid "removing"
+msgstr "removing"
+
+#, c-format
+msgid "checking for file conflicts"
+msgstr "checking for file conflicts"
+
+#, c-format
+msgid "downloading %s...\n"
+msgstr "downloading %s...\n"
+
+#, c-format
+msgid "malloc failure: could not allocate %zd bytes\n"
+msgstr "malloc failure: could not allocate %zd bytes\n"
+
+#, c-format
+msgid "Explicitly installed"
+msgstr "Explicitly installed"
+
+#, c-format
+msgid "Installed as a dependency for another package"
+msgstr "Installed as a dependency for another package"
+
+#, c-format
+msgid "Unknown"
+msgstr "Unknown"
+
+#, c-format
+msgid "Name           :"
+msgstr "Name           :"
+
+#, c-format
+msgid "Version        :"
+msgstr "Version        :"
+
+#, c-format
+msgid "URL            :"
+msgstr "URL            :"
+
+#, c-format
+msgid "Licenses       :"
+msgstr "Licences       :"
+
+#, c-format
+msgid "Groups         :"
+msgstr "Groups         :"
+
+#, c-format
+msgid "Provides       :"
+msgstr "Provides       :"
+
+#, c-format
+msgid "Depends On     :"
+msgstr "Depends On     :"
+
+#, c-format
+msgid "Optional Deps  :"
+msgstr "Optional Deps  :"
+
+#, c-format
+msgid "Required By    :"
+msgstr "Required By    :"
+
+#, c-format
+msgid "Conflicts With :"
+msgstr "Conflicts With :"
+
+#, c-format
+msgid "Replaces       :"
+msgstr "Replaces       :"
+
+#, c-format
+msgid "Download Size  : %6.2f K\n"
+msgstr "Download Size  : %6.2f K\n"
+
+#, c-format
+msgid "Compressed Size: %6.2f K\n"
+msgstr "Compressed Size: %6.2f K\n"
+
+#, c-format
+msgid "Installed Size : %6.2f K\n"
+msgstr "Installed Size : %6.2f K\n"
+
+#, c-format
+msgid "Packager       :"
+msgstr "Packager       :"
+
+#, c-format
+msgid "Architecture   :"
+msgstr "Architecture   :"
+
+#, c-format
+msgid "Build Date     :"
+msgstr "Build Date     :"
+
+#, c-format
+msgid "Install Date   :"
+msgstr "Install Date   :"
+
+#, c-format
+msgid "Install Reason :"
+msgstr "Install Reason :"
+
+#, c-format
+msgid "Install Script :"
+msgstr "Install Script :"
+
+#, c-format
+msgid "Yes"
+msgstr "Yes"
+
+#, c-format
+msgid "No"
+msgstr "No"
+
+#, c-format
+msgid "MD5 Sum        :"
+msgstr "MD5 Sum        :"
+
+#, c-format
+msgid "Description    :"
+msgstr "Description    :"
+
+#, c-format
+msgid "Repository     :"
+msgstr "Repository     :"
+
+#, c-format
+msgid "Backup Files:\n"
+msgstr "Backup Files:\n"
+
+#, c-format
+msgid "could not calculate checksums for %s\n"
+msgstr "could not calculate checksums for %s\n"
+
+#, c-format
+msgid "MODIFIED\t%s\n"
+msgstr "MODIFIED\t%s\n"
+
+#, c-format
+msgid "Not Modified\t%s\n"
+msgstr "Not Modified\t%s\n"
+
+#, c-format
+msgid "MISSING\t\t%s\n"
+msgstr "MISSING\t\t%s\n"
+
+#, c-format
+msgid "(none)\n"
+msgstr "(none)\n"
+
+#, c-format
+msgid "no changelog available for '%s'.\n"
+msgstr "no changelog available for '%s'.\n"
+
+#, c-format
+msgid "options"
+msgstr "options"
+
+#, c-format
+msgid "file"
+msgstr "file"
+
+#, c-format
+msgid "package"
+msgstr "package"
+
+#, c-format
+msgid "usage"
+msgstr "usage"
+
+#, c-format
+msgid "operation"
+msgstr "operation"
+
+#, c-format
+msgid "operations:\n"
+msgstr "operations:\n"
+
+#, c-format
+msgid ""
+"\n"
+"use '%s {-h --help}' with an operation for available options\n"
+msgstr ""
+"\n"
+"use '%s {-h --help}' with an operation for available options\n"
+
+#, c-format
+msgid ""
+"  -c, --cascade        remove packages and all packages that depend on them\n"
+msgstr ""
+"  -c, --cascade        remove packages and all packages that depend on them\n"
+
+#, c-format
+msgid "  -d, --nodeps         skip dependency checks\n"
+msgstr "  -d, --nodeps         skip dependency checks\n"
+
+#, c-format
+msgid ""
+"  -k, --dbonly         only remove database entry, do not remove files\n"
+msgstr ""
+"  -k, --dbonly         only remove database entry, do not remove files\n"
+
+#, c-format
+msgid "  -n, --nosave         remove configuration files as well\n"
+msgstr "  -n, --nosave         remove configuration files as well\n"
+
+#, c-format
+msgid ""
+"  -s, --recursive      remove dependencies also (that won't break packages)\n"
+"                       (-ss includes explicitly installed dependencies too)\n"
+msgstr ""
+"  -s, --recursive      remove dependencies also (that won't break packages)\n"
+"                       (-ss includes explicitly installed dependencies too)\n"
+
+#, c-format
+msgid ""
+"  -u, --unneeded       remove unneeded packages (that won't break packages)\n"
+msgstr ""
+"  -u, --unneeded       remove unneeded packages (that won't break packages)\n"
+
+#, c-format
+msgid "      --asdeps         install packages as non-explicitly installed\n"
+msgstr "      --asdeps         install packages as non-explicitly installed\n"
+
+#, c-format
+msgid "      --asexplicit     install packages as explicitly installed\n"
+msgstr "      --asexplicit     install packages as explicitly installed\n"
+
+#, c-format
+msgid "  -f, --force          force install, overwrite conflicting files\n"
+msgstr "  -f, --force          force install, overwrite conflicting files\n"
+
+#, c-format
+msgid "  -c, --changelog      view the changelog of a package\n"
+msgstr "  -c, --changelog      view the changelog of a package\n"
+
+#, c-format
+msgid "  -d, --deps           list all packages installed as dependencies\n"
+msgstr "  -d, --deps           list all packages installed as dependencies\n"
+
+#, c-format
+msgid "  -e, --explicit       list all packages explicitly installed\n"
+msgstr "  -e, --explicit       list all packages explicitly installed\n"
+
+#, c-format
+msgid "  -g, --groups         view all members of a package group\n"
+msgstr "  -g, --groups         view all members of a package group\n"
+
+#, c-format
+msgid ""
+"  -i, --info           view package information (-ii for backup files)\n"
+msgstr ""
+"  -i, --info           view package information (-ii for backup files)\n"
+
+#, c-format
+msgid "  -l, --list           list the contents of the queried package\n"
+msgstr "  -l, --list           list the contents of the queried package\n"
+
+#, c-format
+msgid ""
+"  -m, --foreign        list installed packages not found in sync db(s)\n"
+msgstr ""
+"  -m, --foreign        list installed packages not found in sync db(s)\n"
+"(s)\n"
+
+#, c-format
+msgid "  -o, --owns <file>    query the package that owns <file>\n"
+msgstr "  -o, --owns <file>    query the package that owns <file>\n"
+
+#, c-format
+msgid "  -p, --file <package> query a package file instead of the database\n"
+msgstr "  -p, --file <package> query a package file instead of the database\n"
+
+#, c-format
+msgid ""
+"  -s, --search <regex> search locally-installed packages for matching "
+"strings\n"
+msgstr ""
+"  -s, --search <regex> search locally-installed packages for matching "
+"strings\n"
+
+#, c-format
+msgid "  -t, --unrequired     list all packages not required by any package\n"
+msgstr "  -t, --unrequired     list all packages not required by any package\n"
+
+#, c-format
+msgid "  -u, --upgrades       list all packages that can be upgraded\n"
+msgstr "  -u, --upgrades       list all packages that can be upgraded\n"
+
+#, c-format
+msgid "  -q, --quiet          show less information for query and search\n"
+msgstr "  -q, --quiet          show less information for query and search\n"
+
+#, c-format
+msgid ""
+"  -c, --clean          remove old packages from cache directory (-cc for "
+"all)\n"
+msgstr ""
+"  -c, --clean          remove old packages from cache directory (-cc for "
+"all)\n"
+
+#, c-format
+msgid "  -i, --info           view package information\n"
+msgstr "  -i, --info           view package information\n"
+
+#, c-format
+msgid "  -l, --list <repo>    view a list of packages in a repo\n"
+msgstr "  -l, --list <repo>    view a list of packages in a repo\n"
+
+#, c-format
+msgid ""
+"  -p, --print-uris     print out URIs for given packages and their "
+"dependencies\n"
+msgstr ""
+"  -p, --print-uris     print out URIs for given packages and their "
+"dependencies\n"
+
+#, c-format
+msgid ""
+"  -s, --search <regex> search remote repositories for matching strings\n"
+msgstr ""
+"  -s, --search <regex> search remote repositories for matching strings\n"
+
+#, c-format
+msgid "  -u, --sysupgrade     upgrade all packages that are out of date\n"
+msgstr "  -u, --sysupgrade     upgrade all packages that are out of date\n"
+
+#, c-format
+msgid ""
+"  -w, --downloadonly   download packages but do not install/upgrade "
+"anything\n"
+msgstr ""
+"  -w, --downloadonly   download packages but do not install/upgrade "
+"anything\n"
+
+#, c-format
+msgid ""
+"  -y, --refresh        download fresh package databases from the server\n"
+msgstr ""
+"  -y, --refresh        download fresh package databases from the server\n"
+
+#, c-format
+msgid "      --needed         don't reinstall up to date packages\n"
+msgstr "      --needed         don't reinstall up to date packages\n"
+
+#, c-format
+msgid ""
+"      --ignore <pkg>   ignore a package upgrade (can be used more than "
+"once)\n"
+msgstr ""
+"      --ignore <pkg>   ignore a package upgrade (can be used more than "
+"once)\n"
+
+#, c-format
+msgid ""
+"      --ignoregroup <grp>\n"
+"                       ignore a group upgrade (can be used more than once)\n"
+msgstr ""
+"      --ignoregroup <grp>\n"
+"                       ignore a group upgrade (can be used more than once)\n"
+
+#, c-format
+msgid "      --config <path>  set an alternate configuration file\n"
+msgstr "      --config <path>  set an alternate configuration file\n"
+
+#, c-format
+msgid "      --logfile <path> set an alternate log file\n"
+msgstr "      --logfile <path> set an alternate log file\n"
+
+#, c-format
+msgid "      --noconfirm      do not ask for any confirmation\n"
+msgstr "      --noconfirm      do not ask for any confirmation\n"
+
+#, c-format
+msgid ""
+"      --noprogressbar  do not show a progress bar when downloading files\n"
+msgstr ""
+"      --noprogressbar  do not show a progress bar when downloading files\n"
+
+#, c-format
+msgid ""
+"      --noscriptlet    do not execute the install scriptlet if one exists\n"
+msgstr ""
+"      --noscriptlet    do not execute the install scriptlet if one exists\n"
+
+#, c-format
+msgid "  -v, --verbose        be verbose\n"
+msgstr "  -v, --verbose        be verbose\n"
+
+#, c-format
+msgid "  -r, --root <path>    set an alternate installation root\n"
+msgstr "  -r, --root <path>    set an alternate installation root\n"
+
+#, c-format
+msgid "  -b, --dbpath <path>  set an alternate database location\n"
+msgstr "  -b, --dbpath <path>  set an alternate database location\n"
+
+#, c-format
+msgid "      --cachedir <dir> set an alternate package cache location\n"
+msgstr "      --cachedir <dir> set an alternate package cache location\n"
+
+#, c-format
+msgid ""
+"                       This program may be freely redistributed under\n"
+"                       the terms of the GNU General Public License.\n"
+msgstr ""
+"                       This program may be freely redistributed under\n"
+"                       the terms of the GNU General Public License.\n"
+
+#, c-format
+msgid "problem setting rootdir '%s' (%s)\n"
+msgstr "problem setting rootdir '%s' (%s)\n"
+
+#, c-format
+msgid "problem setting dbpath '%s' (%s)\n"
+msgstr "problem setting dbpath '%s' (%s)\n"
+
+#, c-format
+msgid "problem setting logfile '%s' (%s)\n"
+msgstr "problem setting logfile '%s' (%s)\n"
+
+#, c-format
+msgid "'%s' is not a valid debug level\n"
+msgstr "'%s' is not a valid debug level\n"
+
+#, c-format
+msgid "problem adding cachedir '%s' (%s)\n"
+msgstr "problem adding cachedir '%s' (%s)\n"
+
+#, c-format
+msgid "only one operation may be used at a time\n"
+msgstr "only one operation may be used at a time\n"
+
+#, c-format
+msgid "config file %s could not be read.\n"
+msgstr "config file %s could not be read.\n"
+
+#, c-format
+msgid "config file %s, line %d: bad section name.\n"
+msgstr "config file %s, line %d: bad section name.\n"
+
+#, fuzzy, c-format
+msgid "could not register '%s' database (%s)\n"
+msgstr "could not register 'local' database (%s)\n"
+
+#, c-format
+msgid "config file %s, line %d: syntax error in config file- missing key.\n"
+msgstr "config file %s, line %d: syntax error in config file- missing key.\n"
+
+#, c-format
+msgid "config file %s, line %d: All directives must belong to a section.\n"
+msgstr "config file %s, line %d: All directives must belong to a section.\n"
+
+#, c-format
+msgid "config file %s, line %d: directive '%s' not recognized.\n"
+msgstr "config file %s, line %d: directive '%s' not recognised.\n"
+
+#, c-format
+msgid "invalid value for 'CleanMethod' : '%s'\n"
+msgstr "invalid value for 'CleanMethod' : '%s'\n"
+
+#, fuzzy, c-format
+msgid "could not add server URL to database '%s': %s (%s)\n"
+msgstr "could not register 'local' database (%s)\n"
+
+#, c-format
+msgid "failed to initialize alpm library (%s)\n"
+msgstr "failed to initialise alpm library (%s)\n"
+
+#, c-format
+msgid "you cannot perform this operation unless you are root.\n"
+msgstr "you cannot perform this operation unless you are root.\n"
+
+#, c-format
+msgid "could not register 'local' database (%s)\n"
+msgstr "could not register 'local' database (%s)\n"
+
+#, c-format
+msgid "no operation specified (use -h for help)\n"
+msgstr "no operation specified (use -h for help)\n"
+
+#, c-format
+msgid "no file was specified for --owns\n"
+msgstr "no file was specified for --owns\n"
+
+#, c-format
+msgid "failed to read file '%s': %s\n"
+msgstr "failed to read file '%s': %s\n"
+
+#, c-format
+msgid "cannot determine ownership of a directory\n"
+msgstr "cannot determine ownership of a directory\n"
+
+#, c-format
+msgid "cannot determine real path for '%s': %s\n"
+msgstr "cannot determine real path for '%s': %s\n"
+
+#, c-format
+msgid "%s is owned by %s %s\n"
+msgstr "%s is owned by %s %s\n"
+
+#, c-format
+msgid "No package owns %s\n"
+msgstr "No package owns %s\n"
+
+#, c-format
+msgid "group \"%s\" was not found\n"
+msgstr "group \"%s\" was not found\n"
+
+#, c-format
+msgid "Checking for package upgrades... \n"
+msgstr "Checking for package upgrades... \n"
+
+#, c-format
+msgid "no upgrades found.\n"
+msgstr "no upgrades found.\n"
+
+#, c-format
+msgid "no usable package repositories configured.\n"
+msgstr "no usable package repositories configured.\n"
+
+#, c-format
+msgid "no targets specified (use -h for help)\n"
+msgstr "no targets specified (use -h for help)\n"
+
+#, c-format
+msgid "package \"%s\" not found\n"
+msgstr "package \"%s\" not found\n"
+
+#, c-format
+msgid "%s not found, searching for group...\n"
+msgstr "%s not found, searching for group...\n"
+
+#, c-format
+msgid "'%s': not found in local db\n"
+msgstr "'%s': not found in local db\n"
+
+#, c-format
+msgid ":: group %s:\n"
+msgstr ":: group %s:\n"
+
+#, c-format
+msgid "    Remove whole content?"
+msgstr "    Remove whole content?"
+
+#, c-format
+msgid ":: Remove %s from group %s?"
+msgstr ":: Remove %s from group %s?"
+
+#, c-format
+msgid "failed to prepare transaction (%s)\n"
+msgstr "failed to prepare transaction (%s)\n"
+
+#, c-format
+msgid ":: %s: requires %s\n"
+msgstr ":: %s: requires %s\n"
+
+#, c-format
+msgid "Do you want to remove these packages?"
+msgstr "Do you want to remove these packages?"
+
+#, c-format
+msgid "failed to commit transaction (%s)\n"
+msgstr "failed to commit transaction (%s)\n"
+
+#, c-format
+msgid "could not access database directory\n"
+msgstr "could not access database directory\n"
+
+#, c-format
+msgid "Do you want to remove %s?"
+msgstr "Do you want to remove %s?"
+
+#, c-format
+msgid "could not remove repository directory\n"
+msgstr "could not remove repository directory\n"
+
+#, c-format
+msgid "Database directory: %s\n"
+msgstr "Database directory: %s\n"
+
+#, c-format
+msgid "Do you want to remove unused repositories?"
+msgstr "Do you want to remove unused repositories?"
+
+#, c-format
+msgid "Database directory cleaned up\n"
+msgstr "Database directory cleaned up\n"
+
+#, c-format
+msgid "Cache directory: %s\n"
+msgstr "Cache directory: %s\n"
+
+#, c-format
+msgid "Do you want to remove uninstalled packages from cache?"
+msgstr "Do you want to remove uninstalled packages from cache?"
+
+#, c-format
+msgid "Do you want to remove outdated packages from cache?"
+msgstr "Do you want to remove outdated packages from cache?"
+
+#, c-format
+msgid "removing old packages from cache... "
+msgstr "removing old packages from cache... "
+
+#, c-format
+msgid "could not access cache directory\n"
+msgstr "could not access cache directory\n"
+
+#, c-format
+msgid "done.\n"
+msgstr "done.\n"
+
+#, c-format
+msgid "Do you want to remove ALL packages from cache?"
+msgstr "Do you want to remove ALL packages from cache?"
+
+#, c-format
+msgid "removing all packages from cache... "
+msgstr "removing all packages from cache... "
+
+#, c-format
+msgid "could not remove cache directory\n"
+msgstr "could not remove cache directory\n"
+
+#, c-format
+msgid "could not create new cache directory\n"
+msgstr "could not create new cache directory\n"
+
+#, c-format
+msgid "failed to update %s (%s)\n"
+msgstr "failed to update %s (%s)\n"
+
+#, c-format
+msgid " %s is up to date\n"
+msgstr " %s is up to date\n"
+
+#, c-format
+msgid "failed to synchronize any databases\n"
+msgstr "failed to synchronise any databases\n"
+
+#, c-format
+msgid "repository '%s' does not exist\n"
+msgstr "repository '%s' does not exist\n"
+
+#, c-format
+msgid "package '%s' was not found in repository '%s'\n"
+msgstr "package '%s' was not found in repository '%s'\n"
+
+#, c-format
+msgid "package '%s' was not found\n"
+msgstr "package '%s' was not found\n"
+
+#, c-format
+msgid "repository \"%s\" was not found.\n"
+msgstr "repository \"%s\" was not found.\n"
+
+#, c-format
+msgid ":: Starting full system upgrade...\n"
+msgstr ":: Starting full system upgrade...\n"
+
+#, c-format
+msgid "%s package not found, searching for group...\n"
+msgstr "%s package not found, searching for group...\n"
+
+#, c-format
+msgid ":: group %s (including ignored packages):\n"
+msgstr ":: group %s (including ignored packages):\n"
+
+#, c-format
+msgid ":: Install whole content?"
+msgstr ":: Install whole content?"
+
+#, c-format
+msgid ":: Install %s from group %s?"
+msgstr ":: Install %s from group %s?"
+
+#, c-format
+msgid "'%s': not found in sync db\n"
+msgstr "'%s': not found in sync db\n"
+
+#, c-format
+msgid ":: %s: conflicts with %s\n"
+msgstr ":: %s: conflicts with %s\n"
+
+#, c-format
+msgid " local database is up to date\n"
+msgstr " local database is up to date\n"
+
+#, c-format
+msgid "Proceed with download?"
+msgstr "Proceed with download?"
+
+#, c-format
+msgid "Proceed with installation?"
+msgstr "Proceed with installation?"
+
+#, c-format
+msgid "%s exists in both '%s' and '%s'\n"
+msgstr "%s exists in both '%s' and '%s'\n"
+
+#, c-format
+msgid "%s: %s exists in filesystem\n"
+msgstr "%s: %s exists in filesystem\n"
+
+#, c-format
+msgid "%s is invalid or corrupted\n"
+msgstr "%s is invalid or corrupted\n"
+
+#, c-format
+msgid "Errors occurred, no packages were upgraded.\n"
+msgstr "Errors occurred, no packages were upgraded.\n"
+
+#, c-format
+msgid ":: Synchronizing package databases...\n"
+msgstr ":: Synchronising package databases...\n"
+
+#, c-format
+msgid ":: The following packages should be upgraded first :\n"
+msgstr ":: The following packages should be upgraded first :\n"
+
+#, c-format
+msgid ""
+":: Do you want to cancel the current operation\n"
+":: and upgrade these packages now?"
+msgstr ""
+":: Do you want to cancel the current operation\n"
+":: and upgrade these packages now?"
+
+#, c-format
+msgid "loading package data...\n"
+msgstr "loading package data...\n"
+
+#, c-format
+msgid ""
+"\n"
+"errors occurred, no packages were upgraded.\n"
+msgstr ""
+"\n"
+"errors occurred, no packages were upgraded.\n"
+
+#, c-format
+msgid "failed to init transaction (%s)\n"
+msgstr "failed to init transaction (%s)\n"
+
+#, c-format
+msgid ""
+"  if you're sure a package manager is not already\n"
+"  running, you can remove %s\n"
+msgstr ""
+"  if you're sure a package manager is not already\n"
+"  running, you can remove %s\n"
+
+#, c-format
+msgid "failed to release transaction (%s)\n"
+msgstr "failed to release transaction (%s)\n"
+
+#, c-format
+msgid "None"
+msgstr "None"
+
+#, c-format
+msgid "Targets (%d):"
+msgstr "Targets (%d):"
+
+#, c-format
+msgid "Total Download Size:    %.2f MB\n"
+msgstr "Total Download Size:    %.2f MB\n"
+
+#, c-format
+msgid "Total Installed Size:   %.2f MB\n"
+msgstr "Total Installed Size:   %.2f MB\n"
+
+#, c-format
+msgid "Remove (%d):"
+msgstr "Remove (%d):"
+
+#, c-format
+msgid "Total Removed Size:   %.2f MB\n"
+msgstr "Total Removed Size:   %.2f MB\n"
+
+#, c-format
+msgid "Optional dependencies for %s\n"
+msgstr "Optional dependencies for %s\n"
+
+#, c-format
+msgid "[Y/n]"
+msgstr "[Y/n]"
+
+#, c-format
+msgid "[y/N]"
+msgstr "[y/N]"
+
+#, c-format
+msgid "Y"
+msgstr "Y"
+
+#, c-format
+msgid "YES"
+msgstr "YES"
+
+#, c-format
+msgid "N"
+msgstr "N"
+
+#, c-format
+msgid "NO"
+msgstr "NO"
+
+#, c-format
+msgid "error: %s"
+msgstr "error: %s"
+
+#, c-format
+msgid "warning: %s"
+msgstr "warning: %s"
+
+#, c-format
+msgid "function: %s"
+msgstr "function: %s"
+
+#, c-format
+msgid "error: "
+msgstr "error: "
+
+#, c-format
+msgid "warning: "
+msgstr "warning: "
+
+#, c-format
+msgid "function: "
+msgstr "function: "
+
+msgid "WARNING:"
+msgstr "WARNING:"
+
+msgid "ERROR:"
+msgstr "ERROR:"
+
+msgid "Cleaning up..."
+msgstr "Cleaning up..."
+
+msgid "There is no agent set up to handle %s URLs. Check %s."
+msgstr "There is no agent set up to handle %s URLs. Check %s."
+
+msgid "Aborting..."
+msgstr "Aborting..."
+
+msgid "The download program %s is not installed."
+msgstr "The download program %s is not installed."
+
+msgid "Pacman returned a fatal error (%i): %s"
+msgstr "Pacman returned a fatal error (%i): %s"
+
+msgid "Installing missing dependencies..."
+msgstr "Installing missing dependencies..."
+
+msgid "Pacman failed to install missing dependencies."
+msgstr "Pacman failed to install missing dependencies."
+
+msgid "Failed to install all missing dependencies."
+msgstr "Failed to install all missing dependencies."
+
+msgid "Missing Dependencies:"
+msgstr "Missing Dependencies:"
+
+msgid "Failed to remove installed dependencies."
+msgstr "Failed to remove installed dependencies."
+
+msgid "Retrieving Sources..."
+msgstr "Retrieving Sources..."
+
+msgid "You do not have write permission to store downloads in %s."
+msgstr "You do not have write permission to store downloads in %s."
+
+msgid "Found %s in build dir"
+msgstr "Found %s in build dir"
+
+msgid "Using cached copy of %s"
+msgstr "Using cached copy of %s"
+
+msgid "%s was not found in the build directory and is not a URL."
+msgstr "%s was not found in the build directory and is not a URL."
+
+msgid "Downloading %s..."
+msgstr "Downloading %s..."
+
+msgid "Failure while downloading %s"
+msgstr "Failure while downloading %s"
+
+msgid "Generating checksums for source files..."
+msgstr "Generating checksums for source files..."
+
+msgid "Invalid integrity algorithm '%s' specified."
+msgstr "Invalid integrity algorithm '%s' specified."
+
+msgid "Cannot find openssl."
+msgstr "Cannot find openssl."
+
+msgid "Unable to find source file %s to generate checksum."
+msgstr "Unable to find source file %s to generate checksum."
+
+msgid "Invalid integrity algorithm '%s' specified"
+msgstr "Invalid integrity algorithm '%s' specified"
+
+msgid "Validating source files with %s..."
+msgstr "Validating source files with %s..."
+
+msgid "NOT FOUND"
+msgstr "NOT FOUND"
+
+msgid "Passed"
+msgstr "Passed"
+
+msgid "FAILED"
+msgstr "FAILED"
+
+msgid "One or more files did not pass the validity check!"
+msgstr "One or more files did not pass the validity check!"
+
+msgid "Integrity checks (%s) are missing or incomplete."
+msgstr "Integrity checks (%s) are missing or incomplete."
+
+msgid "Extracting Sources..."
+msgstr "Extracting Sources..."
+
+msgid "Unable to find source file %s for extraction."
+msgstr "Unable to find source file %s for extraction."
+
+msgid "Failed to extract %s"
+msgstr "Failed to extract %s"
+
+msgid "Starting build()..."
+msgstr "Starting build()..."
+
+msgid "Build Failed."
+msgstr "Build Failed."
+
+msgid "Tidying install..."
+msgstr "Tidying install..."
+
+msgid "Removing info/doc files..."
+msgstr "Removing info/doc files..."
+
+msgid "Compressing man pages..."
+msgstr "Compressing man pages..."
+
+msgid "Stripping debugging symbols from binaries and libraries..."
+msgstr "Stripping debugging symbols from binaries and libraries..."
+
+msgid "Removing libtool .la files..."
+msgstr "Removing libtool .la files..."
+
+msgid "Removing empty directories..."
+msgstr "Removing empty directories..."
+
+msgid "Missing pkg/ directory."
+msgstr "Missing pkg/ directory."
+
+msgid "Creating package..."
+msgstr "Creating package..."
+
+msgid "Generating .PKGINFO file..."
+msgstr "Generating .PKGINFO file..."
+
+msgid "Please add a license line to your %s!"
+msgstr "Please add a license line to your %s!"
+
+msgid "Example for GPL'ed software: license=('GPL')."
+msgstr "Example for GPL'ed software: license=('GPL')."
+
+msgid "Adding install script..."
+msgstr "Adding install script..."
+
+msgid "Adding package changelog..."
+msgstr "Adding package changelog..."
+
+msgid "Compressing package..."
+msgstr "Compressing package..."
+
+msgid "Failed to create package file."
+msgstr "Failed to create package file."
+
+msgid "Cannot find the xdelta binary! Is xdelta installed?"
+msgstr "Cannot find the xdelta binary! Is xdelta installed?"
+
+msgid "Making delta from version %s..."
+msgstr "Making delta from version %s..."
+
+msgid "Recreating package tarball from delta to match md5 signatures"
+msgstr "Recreating package tarball from delta to match md5 signatures"
+
+msgid "NOTE: the delta should ONLY be distributed with this tarball"
+msgstr "NOTE: the delta should ONLY be distributed with this tarball"
+
+msgid "Could not generate the package from the delta."
+msgstr "Could not generate the package from the delta."
+
+msgid "Delta was not able to be created."
+msgstr "Delta was not able to be created."
+
+msgid "No previous version found, skipping xdelta."
+msgstr "No previous version found, skipping xdelta."
+
+msgid "Creating source package..."
+msgstr "Creating source package..."
+
+msgid "Adding %s..."
+msgstr "Adding %s..."
+
+msgid "Install script %s not found."
+msgstr "Install script %s not found."
+
+msgid "Compressing source package..."
+msgstr "Compressing source package..."
+
+msgid "Failed to create source package file."
+msgstr "Failed to create source package file."
+
+msgid "Determining latest darcs revision..."
+msgstr "Determining latest darcs revision..."
+
+msgid "Determining latest cvs revision..."
+msgstr "Determining latest cvs revision..."
+
+msgid "Determining latest git revision..."
+msgstr "Determining latest git revision..."
+
+msgid "Determining latest svn revision..."
+msgstr "Determining latest svn revision..."
+
+msgid "Determining latest bzr revision..."
+msgstr "Determining latest bzr revision..."
+
+msgid "Determining latest hg revision..."
+msgstr "Determining latest hg revision..."
+
+msgid "Version found: %s"
+msgstr "Version found: %s"
+
+msgid "requires an argument"
+msgstr ""
+
+msgid "unrecognized option"
+msgstr ""
+
+msgid "invalid option"
+msgstr ""
+
+msgid "Usage: %s [options]"
+msgstr "Usage: %s [options]"
+
+msgid "Options:"
+msgstr "Options:"
+
+msgid "  -A, --ignorearch Ignore incomplete arch field in %s"
+msgstr "  -A, --ignorearch Ignore incomplete arch field in %s"
+
+msgid "  -c, --clean      Clean up work files after build"
+msgstr "  -c, --clean      Clean up work files after build"
+
+msgid "  -C, --cleancache Clean up source files from the cache"
+msgstr "  -C, --cleancache Clean up source files from the cache"
+
+msgid "  -d, --nodeps     Skip all dependency checks"
+msgstr "  -d, --nodeps     Skip all dependency checks"
+
+msgid "  -e, --noextract  Do not extract source files (use existing src/ dir)"
+msgstr "  -e, --noextract  Do not extract source files (use existing src/ dir)"
+
+msgid "  -f, --force      Overwrite existing package"
+msgstr "  -f, --force      Overwrite existing package"
+
+msgid "  -g, --geninteg   Generate integrity checks for source files"
+msgstr "  -g, --geninteg   Generate integrity checks for source files"
+
+msgid "  -h, --help       This help"
+msgstr "  -h, --help       This help"
+
+msgid "  -i, --install    Install package after successful build"
+msgstr "  -i, --install    Install package after successful build"
+
+msgid "  -L, --log        Log package build process"
+msgstr "  -L, --log        Log package build process"
+
+msgid "  -m, --nocolor    Disable colorized output messages"
+msgstr "  -m, --nocolor    Disable colourised output messages"
+
+msgid "  -o, --nobuild    Download and extract files only"
+msgstr "  -o, --nobuild    Download and extract files only"
+
+msgid "  -p <buildscript> Use an alternate build script (instead of '%s')"
+msgstr "  -p <buildscript> Use an alternate build script (instead of '%s')"
+
+msgid ""
+"  -r, --rmdeps     Remove installed dependencies after a successful build"
+msgstr ""
+"  -r, --rmdeps     Remove installed dependencies after a successful build"
+
+msgid "  -R, --repackage  Repackage contents of pkg/ without building"
+msgstr "  -R, --repackage  Repackage contents of pkg/ without building"
+
+msgid "  -s, --syncdeps   Install missing dependencies with pacman"
+msgstr "  -s, --syncdeps   Install missing dependencies with pacman"
+
+msgid ""
+"      --allsource  Generate a source-only tarball including downloaded "
+"sources"
+msgstr ""
+"      --allsource  Generate a source-only tarball including downloaded "
+"sources"
+
+msgid "      --asroot     Allow makepkg to run as root user"
+msgstr "      --asroot     Allow makepkg to run as root user"
+
+msgid ""
+"      --holdver    Prevent automatic version bumping for development "
+"PKGBUILDs"
+msgstr ""
+"      --holdver    Prevent automatic version bumping for development "
+"PKGBUILDs"
+
+msgid ""
+"      --source     Generate a source-only tarball without downloaded sources"
+msgstr ""
+"      --source     Generate a source-only tarball without downloaded sources"
+
+msgid "These options can be passed to pacman:"
+msgstr "These options can be passed to pacman:"
+
+msgid ""
+"      --noconfirm      Do not ask for confirmation when resolving "
+"dependencies"
+msgstr ""
+"      --noconfirm      Do not ask for confirmation when resolving "
+"dependencies"
+
+msgid ""
+"      --noprogressbar  Do not show a progress bar when downloading files"
+msgstr ""
+"      --noprogressbar  Do not show a progress bar when downloading files"
+
+msgid "If -p is not specified, makepkg will look for '%s'"
+msgstr "If -p is not specified, makepkg will look for '%s'"
+
+msgid ""
+"Copyright (C) 2002-2007 Judd Vinet <jvinet@zeroflux.org>.\\n\\nThis is free "
+"software; see the source for copying conditions.\\nThere is NO WARRANTY, to "
+"the extent permitted by law.\\n"
+msgstr ""
+"Copyright (C) 2002-2007 Judd Vinet <jvinet@zeroflux.org>.\\n\\nThis is free "
+"software; see the source for copying conditions.\\nThere is NO WARRANTY, to "
+"the extent permitted by law.\\n"
+
+msgid "%s not found."
+msgstr "%s not found."
+
+msgid "\\0--holdver and --forcever cannot both be specified"
+msgstr "\\0--holdver and --forcever cannot both be specified"
+
+msgid "Cleaning up ALL files from %s."
+msgstr "Cleaning up ALL files from %s."
+
+msgid "    Are you sure you wish to do this? "
+msgstr "    Are you sure you wish to do this? "
+
+msgid "Problem removing files; you may not have correct permissions in %s"
+msgstr "Problem removing files; you may not have correct permissions in %s"
+
+msgid "Source cache cleaned."
+msgstr "Source cache cleaned."
+
+msgid "No files have been removed."
+msgstr "No files have been removed."
+
+msgid "Source destination must be defined in makepkg.conf."
+msgstr "Source destination must be defined in makepkg.conf."
+
+msgid "In addition, please run makepkg -C outside of your cache directory."
+msgstr "In addition, please run makepkg -C outside of your cache directory."
+
+msgid "BUILDSCRIPT is undefined! Ensure you have updated %s."
+msgstr "BUILDSCRIPT is undefined! Ensure you have updated %s."
+
+msgid "Running makepkg as root is a BAD idea and can cause"
+msgstr "Running makepkg as root is a BAD idea and can cause"
+
+msgid "permanent, catastrophic damage to your system. If you"
+msgstr "permanent, catastrophic damage to your system. If you"
+
+msgid "wish to run as root, please use the --asroot option."
+msgstr "wish to run as root, please use the --asroot option."
+
+msgid "The --asroot option is meant for the root user only."
+msgstr "The --asroot option is meant for the root user only."
+
+msgid "Please rerun makepkg without the --asroot flag."
+msgstr "Please rerun makepkg without the --asroot flag."
+
+msgid "Fakeroot must be installed if using the 'fakeroot' option"
+msgstr "Fakeroot must be installed if using the 'fakeroot' option"
+
+msgid "in the BUILDENV array in %s."
+msgstr "in the BUILDENV array in %s."
+
+msgid "Running makepkg as an unprivileged user will result in non-root"
+msgstr "Running makepkg as an unprivileged user will result in non-root"
+
+msgid "ownership of the packaged files. Try using the fakeroot environment by"
+msgstr "ownership of the packaged files. Try using the fakeroot environment by"
+
+msgid "placing 'fakeroot' in the BUILDENV array in makepkg.conf."
+msgstr "placing 'fakeroot' in the BUILDENV array in makepkg.conf."
+
+msgid "Do not use the '-F' option. This option is only for use by makepkg."
+msgstr "Do not use the '-F' option. This option is only for use by makepkg."
+
+msgid "Cannot find the sudo binary! Is sudo installed?"
+msgstr "Cannot find the sudo binary! Is sudo installed?"
+
+msgid "Missing dependencies cannot be installed or removed as a normal user"
+msgstr "Missing dependencies cannot be installed or removed as a normal user"
+
+msgid "without sudo; install and configure sudo to auto-resolve dependencies."
+msgstr "without sudo; install and configure sudo to auto-resolve dependencies."
+
+msgid "%s does not exist."
+msgstr "%s does not exist."
+
+msgid "%s is not allowed to be empty."
+msgstr "%s is not allowed to be empty."
+
+msgid "%s is not allowed to contain hyphens."
+msgstr "%s is not allowed to contain hyphens."
+
+msgid "%s is not available for the '%s' architecture."
+msgstr "%s is not available for the '%s' architecture."
+
+msgid "Note that many packages may need a line added to their %s"
+msgstr "Note that many packages may need a line added to their %s"
+
+msgid "such as arch=('%s')."
+msgstr "such as arch=('%s')."
+
+msgid "Provides array cannot contain comparison (< or >) operators."
+msgstr ""
+
+msgid "Install scriptlet (%s) does not exist."
+msgstr "Install scriptlet (%s) does not exist."
+
+msgid "options array contains unknown option '%s'"
+msgstr "options array contains unknown option '%s'"
+
+msgid "A package has already been built, installing existing package..."
+msgstr "A package has already been built, installing existing package..."
+
+msgid "A package has already been built. (use -f to overwrite)"
+msgstr "A package has already been built. (use -f to overwrite)"
+
+msgid "Skipping build."
+msgstr "Skipping build."
+
+msgid "Leaving fakeroot environment."
+msgstr "Leaving fakeroot environment."
+
+msgid "Making package: %s"
+msgstr "Making package: %s"
+
+msgid "Running makepkg as root..."
+msgstr "Running makepkg as root..."
+
+msgid "Source package created: %s"
+msgstr "Source package created: %s"
+
+msgid "Skipping dependency checks."
+msgstr "Skipping dependency checks."
+
+msgid "Checking Runtime Dependencies..."
+msgstr "Checking Runtime Dependencies..."
+
+msgid "Checking Buildtime Dependencies..."
+msgstr "Checking Buildtime Dependencies..."
+
+msgid "Could not resolve all dependencies."
+msgstr "Could not resolve all dependencies."
+
+msgid "pacman was not found in PATH; skipping dependency checks."
+msgstr "pacman was not found in PATH; skipping dependency checks."
+
+msgid "Skipping source retrieval        -- using existing src/ tree"
+msgstr "Skipping source retrieval        -- using existing src/ tree"
+
+msgid "Skipping source integrity checks -- using existing src/ tree"
+msgstr "Skipping source integrity checks -- using existing src/ tree"
+
+msgid "Skipping source extraction       -- using existing src/ tree"
+msgstr "Skipping source extraction       -- using existing src/ tree"
+
+msgid "The source directory is empty, there is nothing to build!"
+msgstr "The source directory is empty, there is nothing to build!"
+
+msgid "The package directory is empty, there is nothing to repackage!"
+msgstr "The package directory is empty, there is nothing to repackage!"
+
+msgid "Sources are ready."
+msgstr "Sources are ready."
+
+msgid "Removing existing pkg/ directory..."
+msgstr "Removing existing pkg/ directory..."
+
+msgid "Entering fakeroot environment..."
+msgstr "Entering fakeroot environment..."
+
+msgid "Finished making: %s"
+msgstr "Finished making: %s"
+
+msgid "Usage: %s [pacman_db_root]"
+msgstr "Usage: %s [pacman_db_root]"
+
+msgid ""
+"pacman-optimize is a little hack that should improve the performance\\nof "
+"pacman when reading/writing to its filesystem-based database.\\n\\n"
+msgstr ""
+"pacman-optimize is a little hack that should improve the performance\\nof "
+"pacman when reading/writing to its filesystem-based database.\\n\\n"
+
+msgid ""
+"Because pacman uses many small files to keep track of packages,\\nthere is a "
+"tendency for these files to become fragmented over time.\\nThis script "
+"attempts to relocate these small files into one\\ncontinuous location on "
+"your hard drive. The result is that the hard\\ndrive should be able to read "
+"them faster, since the hard drive head\\ndoes not have to move around the "
+"disk as much.\\n"
+msgstr ""
+"Because pacman uses many small files to keep track of packages,\\nthere is a "
+"tendency for these files to become fragmented over time.\\nThis script "
+"attempts to relocate these small files into one\\ncontinuous location on "
+"your hard drive. The result is that the hard\\ndrive should be able to read "
+"them faster, since the hard drive head\\ndoes not have to move around the "
+"disk as much.\\n"
+
+msgid "diff tool was not found, please install diffutils."
+msgstr "diff tool was not found, please install diffutils."
+
+msgid "%s does not exist or is not a directory."
+msgstr "%s does not exist or is not a directory."
+
+msgid "You must have correct permissions to optimize the database."
+msgstr "You must have correct permissions to optimise the database."
+
+msgid "Pacman lock file was found. Cannot run while pacman is running."
+msgstr "Pacman lock file was found. Cannot run while pacman is running."
+
+msgid "ERROR: Can not create temp directory for database building."
+msgstr "ERROR: Can not create temp directory for database building."
+
+msgid "MD5sum'ing the old database..."
+msgstr "MD5sum'ing the old database..."
+
+msgid "Tar'ing up %s..."
+msgstr "Tar'ing up %s..."
+
+msgid "Tar'ing up %s failed."
+msgstr "Tar'ing up %s failed."
+
+#, fuzzy
+msgid "Making and MD5sum'ing the new database..."
+msgstr "Making and MD5sum'ing the new db..."
+
+msgid "Untar'ing %s failed."
+msgstr "Untar'ing %s failed."
+
+#, fuzzy
+msgid "Syncing database to disk..."
+msgstr ":: Synchronising package databases...\n"
+
+msgid "Checking integrity..."
+msgstr "Checking integrity..."
+
+msgid "Integrity check FAILED, reverting to old database."
+msgstr "Integrity check FAILED, reverting to old database."
+
+#, fuzzy
+msgid "Rotating database into place..."
+msgstr "Putting the new database in place..."
+
+msgid "Finished. Your pacman database has been optimized."
+msgstr "Finished. Your pacman database has been optimised."
+
+msgid "Usage: repo-add [-q] <path-to-db> <package> ...\\n"
+msgstr "Usage: repo-add [-q] <path-to-db> <package> ...\\n"
+
+msgid "Usage: repo-remove [-q] <path-to-db> <packagename> ...\\n\\n"
+msgstr "Usage: repo-remove [-q] <path-to-db> <packagename> ...\\n\\n"
+
+msgid ""
+"repo-add will update a package database by reading a package file."
+"\\nMultiple packages to add can be specified on the command line.\\n\\n"
+msgstr ""
+"repo-add will update a package database by reading a package file."
+"\\nMultiple packages to add can be specified on the command line.\\n\\n"
+
+msgid ""
+"repo-remove will update a package database by removing the package name"
+"\\nspecified on the command line from the given repo database. Multiple"
+"\\npackages to remove can be specified on the command line.\\n\\n"
+msgstr ""
+"repo-remove will update a package database by removing the package name"
+"\\nspecified on the command line from the given repo database. Multiple"
+"\\npackages to remove can be specified on the command line.\\n\\n"
+
+msgid ""
+"The -q/--quiet flag to either program will force silent running except\\nin "
+"the case of warnings or errors.\\n\\n"
+msgstr ""
+"The -q/--quiet flag to either program will force silent running except\\nin "
+"the case of warnings or errors.\\n\\n"
+
+msgid "Example:  repo-add /path/to/repo.db.tar.gz pacman-3.0.0.pkg.tar.gz"
+msgstr "Example:  repo-add /path/to/repo.db.tar.gz pacman-3.0.0.pkg.tar.gz"
+
+msgid "Example:  repo-remove /path/to/repo.db.tar.gz kernel26"
+msgstr "Example:  repo-remove /path/to/repo.db.tar.gz kernel26"
+
+msgid ""
+"Copyright (C) 2006-2008 Aaron Griffin <aaron@archlinux.org>.\\nCopyright (c) "
+"2007-2008 Dan McGee <dan@archlinux.org>.\\n\\nThis is free software; see the "
+"source for copying conditions.\\nThere is NO WARRANTY, to the extent "
+"permitted by law.\\n"
+msgstr ""
+"Copyright (C) 2006-2008 Aaron Griffin <aaron@archlinux.org>.\\nCopyright (c) "
+"2007-2008 Dan McGee <dan@archlinux.org>.\\n\\nThis is free software; see the "
+"source for copying conditions.\\nThere is NO WARRANTY, to the extent "
+"permitted by law.\\n"
+
+msgid "Invalid package file '%s'."
+msgstr "Invalid package file '%s'."
+
+msgid "Creating 'desc' db entry..."
+msgstr "Creating 'desc' db entry..."
+
+msgid "Computing md5 checksums..."
+msgstr "Computing md5 checksums..."
+
+msgid "Creating 'depends' db entry..."
+msgstr "Creating 'depends' db entry..."
+
+msgid "Creating 'deltas' db entry..."
+msgstr "Creating 'deltas' db entry..."
+
+msgid "Added delta '%s'"
+msgstr "Added delta '%s'"
+
+msgid "Could not add delta '%s'"
+msgstr "Could not add delta '%s'"
+
+msgid "Removing existing package '%s'..."
+msgstr "Removing existing package '%s'..."
+
+msgid "Either realpath or readlink are required by repo-add."
+msgstr "Either realpath or readlink are required by repo-add."
+
+msgid "%s not found. Cannot continue."
+msgstr "%s not found. Cannot continue."
+
+msgid "Cannot create temp directory for database building."
+msgstr "Cannot create temp directory for database building."
+
+msgid "Invalid command name '%s' specified."
+msgstr "Invalid command name '%s' specified."
+
+msgid "the -f and --force options are no longer recognized"
+msgstr "the -f and --force options are no longer recognised"
+
+msgid "use options=(force) in the PKGBUILD instead"
+msgstr "use options=(force) in the PKGBUILD instead"
+
+msgid "Repository file '%s' is not a proper pacman database."
+msgstr "Repository file '%s' is not a proper pacman database."
+
+msgid "Extracting database to a temporary location..."
+msgstr "Extracting database to a temporary location..."
+
+msgid "Repository file '%s' was not found."
+msgstr "Repository file '%s' was not found."
+
+msgid "'%s' is not a package file, skipping"
+msgstr "'%s' is not a package file, skipping"
+
+msgid "Adding package '%s'"
+msgstr "Adding package '%s'"
+
+msgid "Package '%s' not found."
+msgstr "Package '%s' not found."
+
+msgid "Searching for package '%s'..."
+msgstr "Searching for package '%s'..."
+
+msgid "Package matching '%s' not found."
+msgstr "Package matching '%s' not found."
+
+msgid "Creating updated database file '%s'"
+msgstr "Creating updated database file '%s'"
+
+msgid "No compression set."
+msgstr "No compression set."
+
+msgid "All packages have been removed from the database. Deleting '%s'."
+msgstr "All packages have been removed from the database. Deleting '%s'."
+
+msgid "No packages modified, nothing to do."
+msgstr "No packages modified, nothing to do."
+
+#~ msgid "segmentation fault\n"
+#~ msgstr "segmentation fault\n"
+
+#~ msgid ""
+#~ "Internal pacman error: Segmentation fault.\n"
+#~ "Please submit a full bug report with --debug if appropriate.\n"
+#~ msgstr ""
+#~ "Internal pacman error: Segmentation fault.\n"
+#~ "Please submit a full bug report with --debug if appropriate.\n"
+
+#~ msgid "For full benefits of pacman-optimize, run 'sync' now."
+#~ msgstr "For full benefits of pacman-optimize, run 'sync' now."

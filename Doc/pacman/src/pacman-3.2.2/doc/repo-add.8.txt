@@ -1,0 +1,48 @@
+/////
+vim:set ts=4 sw=4 syntax=asciidoc noet:
+/////
+repo-add(8)
+==========
+
+Name
+----
+////
+* If we use this below line, the manpage name comes out all weird. We also
+* can't use two separate lines, which is quite annoying. *
+repo-add, repo-remove - package database maintenance utilities
+////
+repo-add - package database maintenance utility
+
+
+Synopsis
+--------
+repo-add [-q] <path-to-db> <package1> [<package2> ...]
+
+repo-remove [-q] <path-to-db> <packagename> [<packagename2> ...]
+
+
+Description
+-----------
+repo-add and repo-remove are two scripts to help build a package database for
+packages built with linkman:makepkg[8] and installed with linkman:pacman[8].
+
+repo-add will update a package database by reading a built package file.
+Multiple packages to add can be specified on the command line.
+
+repo-remove will update a package database by removing the package name
+specified on the command line. Multiple packages to remove can be specified
+on the command line.
+
+
+Options
+-------
+*-q, \--quiet*::
+	Force this program to keep quiet and run silent except for warning and
+	error messages.
+
+
+See Also
+--------
+linkman:makepkg[8], linkman:pacman[8]
+
+include::footer.txt[]

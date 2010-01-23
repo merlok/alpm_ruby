@@ -1,0 +1,561 @@
+# English (British) translations for Pacman package manager package.
+# Copyright (C) 2007 Judd Vinet <jvinet@zeroflux.org>
+# This file is distributed under the same license as the Pacman package manager package.
+# Jeff Bailes <thepizzaking@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Pacman package manager 3.0.0\n"
+"Report-Msgid-Bugs-To: pacman-dev@archlinux.org\n"
+"POT-Creation-Date: 2009-01-05 22:35-0600\n"
+"PO-Revision-Date: 2008-08-23 23:38+0200\n"
+"Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
+"Language-Team: English <en_gb@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, c-format
+msgid "replacing older version %s-%s by %s in target list\n"
+msgstr "replacing older version %s-%s by %s in target list\n"
+
+#, c-format
+msgid "skipping %s-%s because newer version %s is in the target list\n"
+msgstr "skipping %s-%s because newer version %s is in the target list\n"
+
+#, c-format
+msgid "conflicting packages were found in the target list\n"
+msgstr "conflicting packages were found in the target list\n"
+
+#, c-format
+msgid "you cannot install two conflicting packages at the same time\n"
+msgstr "you cannot install two conflicting packages at the same time\n"
+
+#, c-format
+msgid "replacing packages with -U is not supported yet\n"
+msgstr "replacing packages with -U is not supported yet\n"
+
+#, c-format
+msgid "you can replace packages manually using -Rd and -U\n"
+msgstr "you can replace packages manually using -Rd and -U\n"
+
+#, c-format
+msgid ""
+"directory permissions differ on %s\n"
+"filesystem: %o  package: %o\n"
+msgstr ""
+"directory permissions differ on %s\n"
+"filesystem: %o  package: %o\n"
+
+#, c-format
+msgid "extract: symlink %s does not point to dir\n"
+msgstr "extract: symlink %s does not point to dir\n"
+
+#, c-format
+msgid "extract: not overwriting dir with file %s\n"
+msgstr "extract: not overwriting dir with file %s\n"
+
+#, c-format
+msgid "could not extract %s (%s)\n"
+msgstr "could not extract %s (%s)\n"
+
+#, c-format
+msgid "could not rename %s to %s (%s)\n"
+msgstr "could not rename %s to %s (%s)\n"
+
+#, c-format
+msgid "%s saved as %s\n"
+msgstr "%s saved as %s\n"
+
+#, c-format
+msgid "could not install %s as %s (%s)\n"
+msgstr "could not install %s as %s (%s)\n"
+
+#, c-format
+msgid "%s installed as %s\n"
+msgstr "%s installed as %s\n"
+
+#, c-format
+msgid "extracting %s as %s.pacnew\n"
+msgstr "extracting %s as %s.pacnew\n"
+
+#, c-format
+msgid "could not get current working directory\n"
+msgstr "could not get current working directory\n"
+
+#, c-format
+msgid "problem occurred while upgrading %s\n"
+msgstr "problem occurred while upgrading %s\n"
+
+#, c-format
+msgid "problem occurred while installing %s\n"
+msgstr "problem occurred while installing %s\n"
+
+#, c-format
+msgid "could not update database entry %s-%s\n"
+msgstr "could not update database entry %s-%s\n"
+
+#, c-format
+msgid "could not add entry '%s' in cache\n"
+msgstr "could not add entry '%s' in cache\n"
+
+#, c-format
+msgid "could not remove database entry %s%s\n"
+msgstr "could not remove database entry %s%s\n"
+
+#, c-format
+msgid "invalid name for database entry '%s'\n"
+msgstr "invalid name for database entry '%s'\n"
+
+#, c-format
+msgid "corrupted database entry '%s'\n"
+msgstr "corrupted database entry '%s'\n"
+
+#, c-format
+msgid "could not open file %s: %s\n"
+msgstr "could not open file %s: %s\n"
+
+#, c-format
+msgid "%s database is inconsistent: name mismatch on package %s\n"
+msgstr "%s database is inconsistent: name mismatch on package %s\n"
+
+#, c-format
+msgid "%s database is inconsistent: version mismatch on package %s\n"
+msgstr "%s database is inconsistent: version mismatch on package %s\n"
+
+#, fuzzy, c-format
+msgid "could not create directory %s: %s\n"
+msgstr "could not change directory to %s (%s)\n"
+
+#, c-format
+msgid "could not parse package description file in %s\n"
+msgstr "could not parse package description file in %s\n"
+
+#, c-format
+msgid "missing package name in %s\n"
+msgstr "missing package name in %s\n"
+
+#, c-format
+msgid "missing package version in %s\n"
+msgstr "missing package version in %s\n"
+
+#, c-format
+msgid "error while reading package %s: %s\n"
+msgstr "error while reading package %s: %s\n"
+
+#, c-format
+msgid "missing package metadata in %s\n"
+msgstr "missing package metadata in %s\n"
+
+#, c-format
+msgid "attempt to re-register the 'local' DB\n"
+msgstr "attempt to re-register the 'local' DB\n"
+
+#, c-format
+msgid "database path is undefined\n"
+msgstr "database path is undefined\n"
+
+#, c-format
+msgid "dependency cycle detected:\n"
+msgstr "dependency cycle detected:\n"
+
+#, c-format
+msgid "%s will be removed after its %s dependency\n"
+msgstr "%s will be removed after its %s dependency\n"
+
+#, c-format
+msgid "%s will be installed before its %s dependency\n"
+msgstr "%s will be installed before its %s dependency\n"
+
+#, c-format
+msgid "provider package was selected (%s provides %s)\n"
+msgstr "provider package was selected (%s provides %s)\n"
+
+#, c-format
+msgid "cannot resolve \"%s\", a dependency of \"%s\"\n"
+msgstr "cannot resolve \"%s\", a dependency of \"%s\"\n"
+
+#, c-format
+msgid "url '%s' is invalid\n"
+msgstr "URL '%s' is invalid\n"
+
+#, c-format
+msgid "url scheme not specified, assuming HTTP\n"
+msgstr "URL scheme not specified, assuming HTTP\n"
+
+#, c-format
+msgid "disk"
+msgstr "disk"
+
+#, c-format
+msgid "failed retrieving file '%s' from %s : %s\n"
+msgstr "failed retrieving file '%s' from %s : %s\n"
+
+#, c-format
+msgid "cannot resume download, starting over\n"
+msgstr "cannot resume download, starting over\n"
+
+#, c-format
+msgid "cannot write to file '%s'\n"
+msgstr "cannot write to file '%s'\n"
+
+#, c-format
+msgid "error downloading '%s': %s\n"
+msgstr "error downloading '%s': %s\n"
+
+#, c-format
+msgid "error writing to file '%s': %s\n"
+msgstr "error writing to file '%s': %s\n"
+
+#, c-format
+msgid "could not chdir to %s\n"
+msgstr "could not chdir to %s\n"
+
+#, c-format
+msgid "running XferCommand: fork failed!\n"
+msgstr "running XferCommand: fork failed!\n"
+
+#, c-format
+msgid "failed to download %s\n"
+msgstr "failed to download %s\n"
+
+#, c-format
+msgid "out of memory!"
+msgstr "out of memory!"
+
+#, c-format
+msgid "unexpected system error"
+msgstr "unexpected system error"
+
+#, c-format
+msgid "insufficient privileges"
+msgstr "insufficient privileges"
+
+#, c-format
+msgid "could not find or read file"
+msgstr "could not find or read file"
+
+#, c-format
+msgid "could not find or read directory"
+msgstr "could not find or read directory"
+
+#, c-format
+msgid "wrong or NULL argument passed"
+msgstr "wrong or NULL argument passed"
+
+#, c-format
+msgid "library not initialized"
+msgstr "library not initialised"
+
+#, c-format
+msgid "library already initialized"
+msgstr "library already initialised"
+
+#, c-format
+msgid "unable to lock database"
+msgstr "unable to lock database"
+
+#, c-format
+msgid "could not open database"
+msgstr "could not open database"
+
+#, c-format
+msgid "could not create database"
+msgstr "could not create database"
+
+#, c-format
+msgid "database not initialized"
+msgstr "database not initialised"
+
+#, c-format
+msgid "database already registered"
+msgstr "database already registered"
+
+#, c-format
+msgid "could not find database"
+msgstr "could not find database"
+
+#, c-format
+msgid "could not update database"
+msgstr "could not update database"
+
+#, c-format
+msgid "could not remove database entry"
+msgstr "could not remove database entry"
+
+#, c-format
+msgid "invalid url for server"
+msgstr "invalid url for server"
+
+#, c-format
+msgid "transaction already initialized"
+msgstr "transaction already initialised"
+
+#, c-format
+msgid "transaction not initialized"
+msgstr "transaction not initialised"
+
+#, c-format
+msgid "duplicate target"
+msgstr "duplicate target"
+
+#, c-format
+msgid "transaction not prepared"
+msgstr "transaction not prepared"
+
+#, c-format
+msgid "transaction aborted"
+msgstr "transaction aborted"
+
+#, c-format
+msgid "operation not compatible with the transaction type"
+msgstr "operation not compatible with the transaction type"
+
+#, c-format
+msgid "could not commit transaction"
+msgstr "could not commit transaction"
+
+#, c-format
+msgid "could not download all files"
+msgstr "could not download all files"
+
+#, c-format
+msgid "could not find or read package"
+msgstr "could not find or read package"
+
+#, c-format
+msgid "invalid or corrupted package"
+msgstr "invalid or corrupted package"
+
+#, c-format
+msgid "cannot open package file"
+msgstr "cannot open package file"
+
+#, c-format
+msgid "cannot load package data"
+msgstr "cannot load package data"
+
+#, c-format
+msgid "package not installed or lesser version"
+msgstr "package not installed or lesser version"
+
+#, c-format
+msgid "cannot remove all files for package"
+msgstr "cannot remove all files for package"
+
+#, c-format
+msgid "package filename is not valid"
+msgstr "package filename is not valid"
+
+#, c-format
+msgid "no such repository"
+msgstr "no such repository"
+
+#, c-format
+msgid "invalid or corrupted delta"
+msgstr "invalid or corrupted delta"
+
+#, c-format
+msgid "delta patch failed"
+msgstr "delta patch failed"
+
+#, c-format
+msgid "group not found"
+msgstr "group not found"
+
+#, c-format
+msgid "could not satisfy dependencies"
+msgstr "could not satisfy dependencies"
+
+#, c-format
+msgid "conflicting dependencies"
+msgstr "conflicting dependencies"
+
+#, c-format
+msgid "conflicting files"
+msgstr "conflicting files"
+
+#, c-format
+msgid "user aborted the operation"
+msgstr "user aborted the operation"
+
+#, c-format
+msgid "internal error"
+msgstr "internal error"
+
+#, c-format
+msgid "not confirmed"
+msgstr "not confirmed"
+
+#, c-format
+msgid "invalid regular expression"
+msgstr "invalid regular expression"
+
+#, c-format
+msgid "libarchive error"
+msgstr "libarchive error"
+
+#, c-format
+msgid "download library error"
+msgstr "download library error"
+
+#, c-format
+msgid "error invoking external downloader"
+msgstr "error invoking external downloader"
+
+#, c-format
+msgid "unexpected error"
+msgstr "unexpected error"
+
+#, c-format
+msgid "could not find %s in database -- skipping\n"
+msgstr "could not find %s in database -- skipping\n"
+
+#, c-format
+msgid "cannot remove file '%s': %s\n"
+msgstr "cannot remove file '%s': %s\n"
+
+#, c-format
+msgid "could not remove database entry %s-%s\n"
+msgstr "could not remove database entry %s-%s\n"
+
+#, c-format
+msgid "could not remove entry '%s' from cache\n"
+msgstr "could not remove entry '%s' from cache\n"
+
+#, c-format
+msgid "%s-%s: ignoring package upgrade (to be replaced by %s-%s)\n"
+msgstr "%s-%s: ignoring package upgrade (to be replaced by %s-%s)\n"
+
+#, c-format
+msgid "%s: local (%s) is newer than %s (%s)\n"
+msgstr "%s: local (%s) is newer than %s (%s)\n"
+
+#, c-format
+msgid "%s: ignoring package upgrade (%s => %s)\n"
+msgstr "%s: ignoring package upgrade (%s => %s)\n"
+
+#, c-format
+msgid "repository '%s' not found\n"
+msgstr "repository '%s' not found\n"
+
+#, c-format
+msgid "%s-%s is up to date -- skipping\n"
+msgstr "%s-%s is up to date -- skipping\n"
+
+#, c-format
+msgid "%s-%s is up to date -- reinstalling\n"
+msgstr "%s-%s is up to date -- reinstalling\n"
+
+#, c-format
+msgid "downgrading package %s (%s => %s)\n"
+msgstr "downgrading package %s (%s => %s)\n"
+
+#, c-format
+msgid "unresolvable package conflicts detected\n"
+msgstr "unresolvable package conflicts detected\n"
+
+#, c-format
+msgid "removing '%s' from target list because it conflicts with '%s'\n"
+msgstr "removing '%s' from target list because it conflicts with '%s'\n"
+
+#, c-format
+msgid "command: %s\n"
+msgstr "command: %s\n"
+
+#, c-format
+msgid "failed to retrieve some files from %s\n"
+msgstr "failed to retrieve some files from %s\n"
+
+#, c-format
+msgid "could not create removal transaction\n"
+msgstr "could not create removal transaction\n"
+
+#, c-format
+msgid "could not initialize the removal transaction\n"
+msgstr "could not initialise the removal transaction\n"
+
+#, c-format
+msgid "could not prepare removal transaction\n"
+msgstr "could not prepare removal transaction\n"
+
+#, c-format
+msgid "could not commit removal transaction\n"
+msgstr "could not commit removal transaction\n"
+
+#, c-format
+msgid "could not create transaction\n"
+msgstr "could not create transaction\n"
+
+#, c-format
+msgid "could not initialize transaction\n"
+msgstr "could not initialise transaction\n"
+
+#, c-format
+msgid "could not prepare transaction\n"
+msgstr "could not prepare transaction\n"
+
+#, c-format
+msgid "could not commit transaction\n"
+msgstr "could not commit transaction\n"
+
+#, c-format
+msgid "could not remove lock file %s\n"
+msgstr "could not remove lock file %s\n"
+
+#, c-format
+msgid "No /bin/sh in parent environment, aborting scriptlet\n"
+msgstr "No /bin/sh in parent environment, aborting scriptlet\n"
+
+#, c-format
+msgid "could not create temp directory\n"
+msgstr "could not create temp directory\n"
+
+#, c-format
+msgid "could not copy tempfile to %s (%s)\n"
+msgstr "could not copy tempfile to %s (%s)\n"
+
+#, c-format
+msgid "could not change directory to %s (%s)\n"
+msgstr "could not change directory to %s (%s)\n"
+
+#, c-format
+msgid "could not fork a new process (%s)\n"
+msgstr "could not fork a new process (%s)\n"
+
+#, c-format
+msgid "could not change the root directory (%s)\n"
+msgstr "could not change the root directory (%s)\n"
+
+#, c-format
+msgid "could not change directory to / (%s)\n"
+msgstr "could not change directory to / (%s)\n"
+
+#, c-format
+msgid "call to popen failed (%s)"
+msgstr "call to popen failed (%s)"
+
+#, c-format
+msgid "call to waitpid failed (%s)\n"
+msgstr "call to waitpid failed (%s)\n"
+
+#, c-format
+msgid "scriptlet failed to execute correctly\n"
+msgstr "scriptlet failed to execute correctly\n"
+
+#, c-format
+msgid "could not remove tmpdir %s\n"
+msgstr "could not remove tmpdir %s\n"
+
+#, c-format
+msgid "could not open %s: %s\n"
+msgstr "could not open %s: %s\n"
+
+#, c-format
+msgid "no %s cache exists, creating...\n"
+msgstr "no %s cache exists, creating...\n"
+
+#, c-format
+msgid "couldn't create package cache, using /tmp instead\n"
+msgstr "couldn't create package cache, using /tmp instead\n"

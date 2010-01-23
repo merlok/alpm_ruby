@@ -1,0 +1,41 @@
+<div id="page">
+<div class="firme">
+<h1>Editing sign</h1>
+
+<% form_for(@sign) do |f| %>
+  <%= f.error_messages %>
+  <div class="inline">
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :cognome %><br />
+    <%= f.text_field :cognome %>
+  </p>
+  <p>
+    <%= f.label :nick %><br />
+    <%= f.text_field :nick %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  </div>
+  <div class="inline">
+  <p >
+    <%= f.label :commento %><br />
+    <%= f.text_area :commento, :cols=>60, :rows=>3 %>
+  </p>
+  <p>
+    <%= f.label :mailinglist %>: <%= f.check_box :mailinglist %>
+  </p>
+  </div>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+</div>
+<%= link_to 'Show', @sign %> |
+<%= link_to 'Back', signs_path %>
+</div>

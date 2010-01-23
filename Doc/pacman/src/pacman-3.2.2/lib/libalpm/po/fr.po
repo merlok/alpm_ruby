@@ -1,0 +1,566 @@
+# French translations for Pacman package manager package.
+# Copyright (C) 2002-2007 Judd Vinet <jvinet@zeroflux.org>
+# This file is distributed under the same license as the Pacman package manager package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Pacman package manager 3.0.1\n"
+"Report-Msgid-Bugs-To: pacman-dev@archlinux.org\n"
+"POT-Creation-Date: 2009-01-05 22:35-0600\n"
+"PO-Revision-Date: 2008-08-23 22:51+0200\n"
+"Last-Translator: Xavier <shiningxc@gmail.com>\n"
+"Language-Team: solsTiCe d'Hiver <solstice.dhiver@laposte.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+
+#, c-format
+msgid "replacing older version %s-%s by %s in target list\n"
+msgstr ""
+"remplacement de l'ancienne version %s-%s par %s dans la liste des cibles\n"
+
+#, c-format
+msgid "skipping %s-%s because newer version %s is in the target list\n"
+msgstr ""
+"ignore le paquet %s-%s car une version plus récente %s est dans la liste des "
+"cibles\n"
+
+#, c-format
+msgid "conflicting packages were found in the target list\n"
+msgstr "des paquets en conflit ont été trouvés dans la liste des cibles\n"
+
+#, c-format
+msgid "you cannot install two conflicting packages at the same time\n"
+msgstr "vous ne pouvez pas installer deux paquets en conflit en même temps\n"
+
+#, c-format
+msgid "replacing packages with -U is not supported yet\n"
+msgstr "remplacer un paquet avec -U n'est pas encore possible\n"
+
+#, c-format
+msgid "you can replace packages manually using -Rd and -U\n"
+msgstr ""
+"vous pouvez remplacer les paquets manuellement en utilisant -Rd et -U\n"
+
+#, c-format
+msgid ""
+"directory permissions differ on %s\n"
+"filesystem: %o  package: %o\n"
+msgstr ""
+"Les permissions pour le répertoire %s sont différentes\n"
+"système de fichier: %o paquet : %o\n"
+
+#, c-format
+msgid "extract: symlink %s does not point to dir\n"
+msgstr "extraction: le lien %s ne pointe pas vers un répertoire\n"
+
+#, c-format
+msgid "extract: not overwriting dir with file %s\n"
+msgstr "extraction: n'écrase pas le répertoire par le fichier %s\n"
+
+#, c-format
+msgid "could not extract %s (%s)\n"
+msgstr "l'extraction de %s a échoué (%s)\n"
+
+#, c-format
+msgid "could not rename %s to %s (%s)\n"
+msgstr "impossible de renommer %s en %s (%s)\n"
+
+#, c-format
+msgid "%s saved as %s\n"
+msgstr "%s enregistré en tant que %s\n"
+
+#, c-format
+msgid "could not install %s as %s (%s)\n"
+msgstr "l'installation de %s en tant que %s a échoué (%s)\n"
+
+#, c-format
+msgid "%s installed as %s\n"
+msgstr "%s installé en tant que %s\n"
+
+#, c-format
+msgid "extracting %s as %s.pacnew\n"
+msgstr "extraction de %s comme %s.pacnew\n"
+
+# j'ai traduit chaque fois "could not" par "a échoué"
+#, c-format
+msgid "could not get current working directory\n"
+msgstr "déterminer le répertoire courant a échoué\n"
+
+#, c-format
+msgid "problem occurred while upgrading %s\n"
+msgstr "des erreurs sont survenues pendant la mise à jour de %s\n"
+
+#, c-format
+msgid "problem occurred while installing %s\n"
+msgstr "des erreurs sont survenues pendant l'installation de %s\n"
+
+#, c-format
+msgid "could not update database entry %s-%s\n"
+msgstr "la mise à jour l'entrée de base de données %s-%s a échoué\n"
+
+#, c-format
+msgid "could not add entry '%s' in cache\n"
+msgstr "l'ajout au cache de l'entrée '%s' a échoué\n"
+
+#, c-format
+msgid "could not remove database entry %s%s\n"
+msgstr "la suppression de l'entrée de base de données %s%s a échoué\n"
+
+#, c-format
+msgid "invalid name for database entry '%s'\n"
+msgstr "nom invalide pour l'entrée de base de données '%s'\n"
+
+#, c-format
+msgid "corrupted database entry '%s'\n"
+msgstr "l'entrée '%s' de la base de données est corrompue\n"
+
+#, c-format
+msgid "could not open file %s: %s\n"
+msgstr "l'ouverture du fichier %s a échoué: %s\n"
+
+#, c-format
+msgid "%s database is inconsistent: name mismatch on package %s\n"
+msgstr "Le dépôt %s est inconsistant: noms différents pour le paquet %s\n"
+
+#, c-format
+msgid "%s database is inconsistent: version mismatch on package %s\n"
+msgstr "Le dépôt %s est inconsistant: versions différentes pour le paquet %s\n"
+
+#, fuzzy, c-format
+msgid "could not create directory %s: %s\n"
+msgstr "changer de répertoire vers %s a échoué (%s)\n"
+
+#, c-format
+msgid "could not parse package description file in %s\n"
+msgstr "l'analyse du fichier de description a échoué dans %s\n"
+
+#, c-format
+msgid "missing package name in %s\n"
+msgstr "nom de paquet manquant dans %s\n"
+
+#, c-format
+msgid "missing package version in %s\n"
+msgstr "version de paquet manquante dans %s\n"
+
+#, c-format
+msgid "error while reading package %s: %s\n"
+msgstr "erreur lors de la lecture du paquet %s: %s\n"
+
+#, c-format
+msgid "missing package metadata in %s\n"
+msgstr "méta-données du paquet manquantes dans %s\n"
+
+#, c-format
+msgid "attempt to re-register the 'local' DB\n"
+msgstr "tentative de ré-enregistrer la base de données locale\n"
+
+#, c-format
+msgid "database path is undefined\n"
+msgstr "base de données non initialisée\n"
+
+#, c-format
+msgid "dependency cycle detected:\n"
+msgstr "cycle de dépendances détecté:\n"
+
+#, c-format
+msgid "%s will be removed after its %s dependency\n"
+msgstr "%s sera supprimé après sa dépendance %s\n"
+
+#, c-format
+msgid "%s will be installed before its %s dependency\n"
+msgstr "%s sera installé avant sa dépendance %s\n"
+
+#, c-format
+msgid "provider package was selected (%s provides %s)\n"
+msgstr "Une provision a été sélectionnée (%s fournit %s)\n"
+
+#, c-format
+msgid "cannot resolve \"%s\", a dependency of \"%s\"\n"
+msgstr "impossible de résoudre \"%s\", une dépendance de \"%s\"\n"
+
+#, c-format
+msgid "url '%s' is invalid\n"
+msgstr "l'url '%s' est invalide\n"
+
+#, c-format
+msgid "url scheme not specified, assuming HTTP\n"
+msgstr "Le protocole n'a pas été spécifié dans l'url, assume http\n"
+
+#, c-format
+msgid "disk"
+msgstr "disque"
+
+#, c-format
+msgid "failed retrieving file '%s' from %s : %s\n"
+msgstr "échec de récupération du fichier '%s' depuis %s : %s\n"
+
+#, c-format
+msgid "cannot resume download, starting over\n"
+msgstr "le téléchargement ne peut pas être repris, relance\n"
+
+#, c-format
+msgid "cannot write to file '%s'\n"
+msgstr "écriture dans le fichier '%s' impossible\n"
+
+#, c-format
+msgid "error downloading '%s': %s\n"
+msgstr "erreur lors du téléchargement de '%s': %s\n"
+
+#, c-format
+msgid "error writing to file '%s': %s\n"
+msgstr "écriture dans le fichier '%s' impossible: %s\n"
+
+#, c-format
+msgid "could not chdir to %s\n"
+msgstr "changer de répertoire vers %s a échoué\n"
+
+#, c-format
+msgid "running XferCommand: fork failed!\n"
+msgstr "lancement de XferCommand: le fork a échoué!\n"
+
+#, c-format
+msgid "failed to download %s\n"
+msgstr "le fichier %s n'a pas pu être téléchargé\n"
+
+#, c-format
+msgid "out of memory!"
+msgstr "dépassement de mémoire!"
+
+#, c-format
+msgid "unexpected system error"
+msgstr "erreur système non prévue"
+
+#, c-format
+msgid "insufficient privileges"
+msgstr "autorisation insuffisante"
+
+#, c-format
+msgid "could not find or read file"
+msgstr "trouver ou lire le fichier a échoué"
+
+#, c-format
+msgid "could not find or read directory"
+msgstr "trouver ou lire le répertoire a échoué"
+
+#, c-format
+msgid "wrong or NULL argument passed"
+msgstr "un argument erroné ou nul a été fourni"
+
+#, c-format
+msgid "library not initialized"
+msgstr "librairie non initialisée"
+
+#, c-format
+msgid "library already initialized"
+msgstr "librairie déjà initialisée"
+
+#, c-format
+msgid "unable to lock database"
+msgstr "verrouillage de la base de données impossible"
+
+#, c-format
+msgid "could not open database"
+msgstr "l'ouverture de la base de données a échoué"
+
+#, c-format
+msgid "could not create database"
+msgstr "la création de la base de données a échoué"
+
+#, c-format
+msgid "database not initialized"
+msgstr "base de données non initialisée"
+
+#, c-format
+msgid "database already registered"
+msgstr "base de données déjà enregistrée"
+
+#, c-format
+msgid "could not find database"
+msgstr "trouver la base de données a échoué"
+
+#, c-format
+msgid "could not update database"
+msgstr "la mise à jour de la base de données a échoué"
+
+#, c-format
+msgid "could not remove database entry"
+msgstr "la suppression de l'entrée de base de données a échoué"
+
+#, c-format
+msgid "invalid url for server"
+msgstr "URL invalide pour le serveur"
+
+#, c-format
+msgid "transaction already initialized"
+msgstr "transaction déjà initialisée"
+
+#, c-format
+msgid "transaction not initialized"
+msgstr "transaction non initialisée"
+
+#, c-format
+msgid "duplicate target"
+msgstr "cible répétée"
+
+#, c-format
+msgid "transaction not prepared"
+msgstr "transaction non préparée"
+
+#, c-format
+msgid "transaction aborted"
+msgstr "transaction annulée"
+
+#, c-format
+msgid "operation not compatible with the transaction type"
+msgstr "opération incompatible avec le type de transaction"
+
+#, c-format
+msgid "could not commit transaction"
+msgstr "appliquer la transaction a échoué"
+
+#, c-format
+msgid "could not download all files"
+msgstr "tous les fichiers n'ont pas pu être téléchargés"
+
+#, c-format
+msgid "could not find or read package"
+msgstr "trouver ou de lire le paquet a échoué"
+
+#, c-format
+msgid "invalid or corrupted package"
+msgstr "paquet invalide ou corrompu"
+
+#, c-format
+msgid "cannot open package file"
+msgstr "ouverture du fichier paquet impossible"
+
+#, c-format
+msgid "cannot load package data"
+msgstr "chargement des données du paquet impossible"
+
+#, c-format
+msgid "package not installed or lesser version"
+msgstr "paquet non installé ou version plus ancienne"
+
+#, c-format
+msgid "cannot remove all files for package"
+msgstr "suppression de certains fichiers du paquet impossible"
+
+#, c-format
+msgid "package filename is not valid"
+msgstr "nom de paquet invalide"
+
+#, c-format
+msgid "no such repository"
+msgstr "ce dépôt n'existe pas"
+
+#, c-format
+msgid "invalid or corrupted delta"
+msgstr "delta invalide ou corrompu"
+
+#, c-format
+msgid "delta patch failed"
+msgstr "l'application du delta a échoué"
+
+#, c-format
+msgid "group not found"
+msgstr "groupe non trouvé"
+
+#, c-format
+msgid "could not satisfy dependencies"
+msgstr "la satisfaction des dépendances a échoué"
+
+#, c-format
+msgid "conflicting dependencies"
+msgstr "conflit de dépendances"
+
+#, c-format
+msgid "conflicting files"
+msgstr "conflit de fichiers"
+
+#, c-format
+msgid "user aborted the operation"
+msgstr "opération annulée par l'utilisateur"
+
+#, c-format
+msgid "internal error"
+msgstr "erreur interne"
+
+#, c-format
+msgid "not confirmed"
+msgstr "non confirmé"
+
+#, c-format
+msgid "invalid regular expression"
+msgstr "expression régulière incorrecte"
+
+#, c-format
+msgid "libarchive error"
+msgstr "erreur de libarchive"
+
+#, c-format
+msgid "download library error"
+msgstr "erreur de la bibliothèque de téléchargement"
+
+#, c-format
+msgid "error invoking external downloader"
+msgstr "erreur en invoquant le client externe de téléchargement"
+
+#, c-format
+msgid "unexpected error"
+msgstr "erreur non prévue"
+
+#, c-format
+msgid "could not find %s in database -- skipping\n"
+msgstr "trouver %s dans la base de données a échoué -- ignoré\n"
+
+#, c-format
+msgid "cannot remove file '%s': %s\n"
+msgstr "suppression du fichier '%s' impossible: %s\n"
+
+#, c-format
+msgid "could not remove database entry %s-%s\n"
+msgstr "la suppression de l'entrée de base de données %s-%s a échoué\n"
+
+#, c-format
+msgid "could not remove entry '%s' from cache\n"
+msgstr "la suppression du cache de l'entrée '%s' a échoué\n"
+
+#, c-format
+msgid "%s-%s: ignoring package upgrade (to be replaced by %s-%s)\n"
+msgstr "%s-%s: ignore la mise à jour du paquet (à remplacer par %s-%s)\n"
+
+#, c-format
+msgid "%s: local (%s) is newer than %s (%s)\n"
+msgstr "%s: la version locale (%s) est plus récente que %s (%s)\n"
+
+#, c-format
+msgid "%s: ignoring package upgrade (%s => %s)\n"
+msgstr "%s: ignore la mise à jour du paquet (%s => %s)\n"
+
+#, c-format
+msgid "repository '%s' not found\n"
+msgstr "dépôt '%s' non trouvé\n"
+
+#, c-format
+msgid "%s-%s is up to date -- skipping\n"
+msgstr "%s-%s est à jour -- ignoré\n"
+
+#, c-format
+msgid "%s-%s is up to date -- reinstalling\n"
+msgstr "%s-%s est à jour -- réinstalle\n"
+
+#, c-format
+msgid "downgrading package %s (%s => %s)\n"
+msgstr "retourne à la version antérieure du paquet %s (%s => %s)\n"
+
+#, c-format
+msgid "unresolvable package conflicts detected\n"
+msgstr "un conflit de paquets impossible à résoudre a été détecté\n"
+
+#, c-format
+msgid "removing '%s' from target list because it conflicts with '%s'\n"
+msgstr "supprime '%s' de la liste de cible car il est en conflit avec '%s'\n"
+
+#, c-format
+msgid "command: %s\n"
+msgstr "commande: %s\n"
+
+#, c-format
+msgid "failed to retrieve some files from %s\n"
+msgstr "échec de récupération de certains fichiers depuis %s\n"
+
+#, c-format
+msgid "could not create removal transaction\n"
+msgstr "la création de la transaction de suppression a échoué\n"
+
+#, c-format
+msgid "could not initialize the removal transaction\n"
+msgstr "l'initialisation de la transaction de suppression a échoué\n"
+
+#, c-format
+msgid "could not prepare removal transaction\n"
+msgstr "la préparation de la transaction de suppression a échoué\n"
+
+#, c-format
+msgid "could not commit removal transaction\n"
+msgstr "appliquer la transaction de suppression a échoué\n"
+
+#, c-format
+msgid "could not create transaction\n"
+msgstr "la création de la transaction a échoué\n"
+
+#, c-format
+msgid "could not initialize transaction\n"
+msgstr "l'initialisation de la transaction a échoué\n"
+
+#, c-format
+msgid "could not prepare transaction\n"
+msgstr "la préparation de la transaction a échoué\n"
+
+#, c-format
+msgid "could not commit transaction\n"
+msgstr "appliquer la transaction a échoué\n"
+
+#, c-format
+msgid "could not remove lock file %s\n"
+msgstr "la suppression du fichier de verrouillage %s a échoué\n"
+
+#, c-format
+msgid "No /bin/sh in parent environment, aborting scriptlet\n"
+msgstr ""
+"Pas de /bin/sh dans l'environnement parent, interruption du scriptlet\n"
+
+#, c-format
+msgid "could not create temp directory\n"
+msgstr "la création du répertoire temporaire a échoué\n"
+
+#, c-format
+msgid "could not copy tempfile to %s (%s)\n"
+msgstr "la copie du fichier temporaire vers %s a échoué (%s)\n"
+
+#, c-format
+msgid "could not change directory to %s (%s)\n"
+msgstr "changer de répertoire vers %s a échoué (%s)\n"
+
+#, c-format
+msgid "could not fork a new process (%s)\n"
+msgstr "la génération d'un nouveau processus a échoué (%s)\n"
+
+#, c-format
+msgid "could not change the root directory (%s)\n"
+msgstr "changer le répertoire racine a échoué (%s)\n"
+
+#, c-format
+msgid "could not change directory to / (%s)\n"
+msgstr "changer de répertoire vers / a échoué (%s)\n"
+
+#, c-format
+msgid "call to popen failed (%s)"
+msgstr "call to popen failed (%s)"
+
+#, c-format
+msgid "call to waitpid failed (%s)\n"
+msgstr "call to waitpid failed (%s)\n"
+
+#, c-format
+msgid "scriptlet failed to execute correctly\n"
+msgstr "le scriptlet n'a pas pu être exécuté correctement\n"
+
+#, c-format
+msgid "could not remove tmpdir %s\n"
+msgstr "la suppression du répertoire temporaire %s a échoué\n"
+
+#, c-format
+msgid "could not open %s: %s\n"
+msgstr "l'ouverture de %s: %s a échoué\n"
+
+#, c-format
+msgid "no %s cache exists, creating...\n"
+msgstr "le cache %s n'existe pas, création...\n"
+
+#, c-format
+msgid "couldn't create package cache, using /tmp instead\n"
+msgstr "n'a pas pu créer le cache de paquets, /tmp sera utilisé à la place\n"

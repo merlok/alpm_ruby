@@ -1,0 +1,713 @@
+.\"     Title: pkgbuild
+.\"    Author: [see the "Authors" section]
+.\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
+.\"      Date: 2009-01-05
+.\"    Manual: Pacman Manual
+.\"    Source: Pacman 3.2.2
+.\"  Language: English
+.\"
+.TH "PKGBUILD" "5" "2009\-01\-05" "Pacman 3\&.2\&.2" "Pacman Manual"
+.\" -----------------------------------------------------------------
+.\" * (re)Define some macros
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" toupper - uppercase a string (locale-aware)
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de toupper
+.tr aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ
+\\$*
+.tr aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH-xref - format a cross-reference to an SH section
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de SH-xref
+.ie n \{\
+.\}
+.toupper \\$*
+.el \{\
+\\$*
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH - level-one heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SH
+.\" put an extra blank line of space above the head in non-TTY output
+.if t \{\
+.sp 1
+.\}
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[an-margin]u
+.ti 0
+.HTML-TAG ".NH \\n[an-level]"
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+\." make the size of the head bigger
+.ps +3
+.ft B
+.ne (2v + 1u)
+.ie n \{\
+.\" if n (TTY output), use uppercase
+.toupper \\$*
+.\}
+.el \{\
+.nr an-break-flag 0
+.\" if not n (not TTY), use normal case (not uppercase)
+\\$1
+.in \\n[an-margin]u
+.ti 0
+.\" if not n (not TTY), put a border/line under subheading
+.sp -.6
+\l'\n(.lu'
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SS - level-two heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SS
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[IN]u
+.ti \\n[SN]u
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.ps \\n[PS-SS]u
+\." make the size of the head bigger
+.ps +2
+.ft B
+.ne (2v + 1u)
+.if \\n[.$] \&\\$*
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BB/BE - put background/screen (filled box) around block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BB
+.if t \{\
+.sp -.5
+.br
+.in +2n
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EB
+.if t \{\
+.if "\\$2"adjust-for-leading-newline" \{\
+.sp -1
+.\}
+.br
+.di
+.in
+.ll
+.gcolor
+.nr BW \\n(.lu-\\n(.i
+.nr BH \\n(dn+.5v
+.ne \\n(BHu+.5v
+.ie "\\$2"adjust-for-leading-newline" \{\
+\M[\\$1]\h'1n'\v'+.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.el \{\
+\M[\\$1]\h'1n'\v'-.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.in 0
+.sp -.5v
+.nf
+.BX
+.in
+.sp .5v
+.fi
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BM/EM - put colored marker in margin next to block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BM
+.if t \{\
+.br
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EM
+.if t \{\
+.br
+.di
+.ll
+.gcolor
+.nr BH \\n(dn
+.ne \\n(BHu
+\M[\\$1]\D'P -.75n 0 0 \\n(BHu -(\\n[.i]u - \\n(INu - .75n) 0 0 -\\n(BHu'\M[]
+.in 0
+.nf
+.BX
+.in
+.fi
+.\}
+..
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "Name"
+PKGBUILD \- Arch Linux package build description file
+.SH "Synopsis"
+.sp
+PKGBUILD
+.SH "Description"
+.sp
+This manual page is meant to describe general rules about PKGBUILDs\&. Once a PKGBUILD is written, the actual package is built using makepkg and installed with pacman\&.
+.if n \{\
+.sp
+.\}
+.RS 4
+.BM yellow
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBNote\fR
+.ps -1
+.br
+.sp
+If you are using Arch Linux and have a local copy of the Arch Build System (ABS) tree on your computer, or are using another distribution that provides a similar tree of build files, you can copy the provided PKGBUILD\&.proto file to a new package build directory and make customizations to suit your needs\&. An up to date prototype file can also be found in the source distribution of this package\&.
+.sp .5v
+.EM yellow
+.RE
+.SH "Options and Directives"
+.sp
+The following is a list of standard options and directives available for use in a PKGBUILD\&. These are all understood and interpreted by makepkg, and most will be directly transferred to the built package\&.
+.sp
+If you need to create any custom variables for use in your build process, it is recommended to name your custom variables with an \fI_\fR (underscore) prefix\&. This will prevent any possible name clashes with internal makepkg variables\&. For example, to store the base kernel version in a variable, use something similar to \FC$_basekernver\F[]\&.
+.PP
+\fBpkgname\fR
+.RS 4
+The name of the package\&. This has be a unix\-friendly name as it will be used in the package filename\&.
+.RE
+.PP
+\fBpkgver\fR
+.RS 4
+The version of the software as released from the author (e\&.g\&.
+\fI2\&.7\&.1\fR)\&.
+.RE
+.PP
+\fBpkgrel\fR
+.RS 4
+This is the release number specific to the Arch Linux release\&. This allows package maintainers to make updates to the package\(cqs configure flags, for example\&. A pkgrel of 1 is typically used for each upstream software release and is incremented for intermediate PKGBUILD updates\&.
+.RE
+.PP
+\fBpkgdesc\fR
+.RS 4
+This should be a brief description of the package and its functionality\&. Try to keep the description to one line of text\&.
+.RE
+.PP
+\fBurl\fR
+.RS 4
+This field contains a URL that is associated with the software being packaged\&. This is typically the project\(cqs website\&.
+.RE
+.PP
+\fBlicense (array)\fR
+.RS 4
+This field specifies the license(s) that apply to the package\&. Commonly\-used licenses are found in
+\fI/usr/share/licenses/common\fR\&. If you see the package\(cqs license there, simply reference it in the license field (e\&.g\&.
+\FClicense=(\'GPL\')\F[])\&. If the package provides a license not found in
+\fI/usr/share/licenses/common\fR, then you should include the license in the package itself and set
+\FClicense=(\'custom\')\F[]
+or
+\FClicense=(\'custom:LicenseName\')\F[]\&. The license should be placed in
+\fI$pkgdir/usr/share/licenses/$pkgname\fR
+when building the package\&. If multiple licenses are applicable for a package, list all of them:
+\FClicense=(\'GPL\' \'FDL\')\F[]\&.
+.RE
+.PP
+\fBinstall\fR
+.RS 4
+Specifies a special install script that is to be included in the package\&. This file should reside in the same directory as the PKGBUILD, and will be copied into the package by makepkg\&. It does not need to be included in the source array (e\&.g\&.
+\FCinstall=pkgname\&.install\F[])\&.
+.RE
+.PP
+\fBsource (array)\fR
+.RS 4
+An array of source files required to build the package\&. Source files must either reside in the same directory as the PKGBUILD file, or be a fully\-qualified URL that makepkg will use to download the file\&. In order to make the PKGBUILD as useful as possible, use the $pkgname and $pkgver variables if possible when specifying the download location\&. Any files that are compressed will automatically be extracted, unless found in the noextract array listed below\&.
+.sp
+It is also possible to specify an optional filename, which is helpful with weird URLs and for handling multiple source files with the same name\&. The syntax is:
+\FCsource=(\'filename::url\')\F[]
+.RE
+.PP
+\fBnoextract (array)\fR
+.RS 4
+An array of filenames corresponding to those from the source array\&. Files listed here will not be extracted with the rest of the source files\&. This is useful for packages which use compressed data which is downloaded but not necessary to uncompress\&.
+.RE
+.PP
+\fBmd5sums (array)\fR
+.RS 4
+This array contains an MD5 hash for every source file specified in the source array (in the same order)\&. makepkg will use this to verify source file integrity during subsequent builds\&. To easily generate md5sums, run \(lqmakepkg \-g >> PKGBUILD\(rq\&. If desired, move the md5sums line to an appropriate location\&.
+.RE
+.PP
+\fBsha1sums, sha256sums, sha384sums, sha512sums (arrays)\fR
+.RS 4
+Alternative integrity checks that makepkg supports; these all behave similar to the md5sums option described above\&. To enable use and generation of these checksums, be sure to set up the
+\FCINTEGRITY_CHECK\F[]
+option in linkman:makepkg\&.conf[5]\&.
+.RE
+.PP
+\fBgroups (array)\fR
+.RS 4
+An array of symbolic names that represent groups of packages, allowing you to install multiple packages by requesting a single target\&. For example, one could install all KDE packages by installing the
+\fIkde\fR
+group\&.
+.RE
+.PP
+\fBarch (array)\fR
+.RS 4
+Defines on which architectures the given package is available (e\&.g\&.
+\FCarch=(\'i686\' \'x86_64\')\F[])\&.
+.RE
+.PP
+\fBbackup (array)\fR
+.RS 4
+A space\-delimited array of filenames, without preceding slashes, that should be backed up if the package is removed or upgraded\&. This is commonly used for packages placing configuration files in /etc\&. See Handling Config Files in linkman:pacman[8] for more information\&.
+.RE
+.PP
+\fBdepends (array)\fR
+.RS 4
+An array of packages that this package depends on to run\&. Packages in this list should be surrounded with single quotes and contain at least the package name\&. Entries can also include a version requirement of the form
+\fIname<>version\fR, where <> is one of five comparisons: >= (greater than or equal to), ⇐ (less than or equal to), = (equal to), > (greater than), or < (less than)\&.
+.RE
+.PP
+\fBmakedepends (array)\fR
+.RS 4
+An array of packages that this package depends on to build, but are not needed at runtime\&. Packages in this list follow the same format as depends\&.
+.RE
+.PP
+\fBoptdepends (array)\fR
+.RS 4
+An array of optional packages (and accompanying reasons) that are not essential to the package, but would offer increased functionality or other features when installed\&. optdepends are currently for informational purposes only and are not utilized by pacman during dependency resolution\&. The format should be similar to the following:
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.BB lightgray
+optdepends=(\'fakeroot: for makepkg usage as normal user\')
+.EB lightgray
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+\fBconflicts (array)\fR
+.RS 4
+An array of packages that will conflict with this package (i\&.e\&. they cannot both be installed at the same time)\&. This directive follows the same format as depends\&. Versioned conflicts are also supported\&.
+.RE
+.PP
+\fBprovides (array)\fR
+.RS 4
+An array of \(lqvirtual provisions\(rq that this package provides\&. This allows a package to provide dependencies other than its own package name\&. For example, the dcron package can provide
+\fIcron\fR, which allows packages to depend on
+\fIcron\fR
+rather than
+\fIdcron OR fcron\fR\&. Versioned provisions are also possible, in the
+\fIname=version\fR
+format\&. For example, dcron can provide
+\fIcron=2\&.0\fR
+to satisfy the
+\fIcron>=2\&.0\fR
+dependency of other packages\&. Provisions involving the
+\fI>\fR
+and
+\fI<\fR
+operators are invalid as only specifc versions of a package may be provided\&.
+.RE
+.PP
+\fBreplaces (array)\fR
+.RS 4
+An array of packages that this package should replace, and can be used to handle renamed/combined packages\&. For example, if the
+\fIj2re\fR
+package is renamed to
+\fIjre\fR, this directive allows future upgrades to continue as expected even though the package has moved\&. Sysupgrade is currently the only pacman operation that utilizes this field, a normal sync will not use its value\&.
+.RE
+.PP
+\fBoptions (array)\fR
+.RS 4
+This array allows you to override some of makepkg\(cqs default behavior when building packages\&. To set an option, just include the option name in the options array\&. To reverse the default behavior, place an \(lq!\(rq at the front of the option\&. Only specify the options you specifically want to override, the rest will be taken from linkman:makepkg\&.conf[5]\&.
+\fBNOTE:\fR
+\fIforce\fR
+is a special option only used in a linkman:PKGBUILD[5], do not use it unless you know what you are doing\&.
+.PP
+\fBstrip\fR
+.RS 4
+Strip symbols from binaries and libraries\&. If you frequently use a debugger on programs or libraries, it may be helpful to disable this option\&.
+.RE
+.PP
+\fBdocs\fR
+.RS 4
+Save doc and info directories\&. If you wish to delete doc and info directories, specify
+\FC!docs\F[]
+in the array\&.
+.RE
+.PP
+\fBlibtool\fR
+.RS 4
+Leave libtool (\&.la) files in packages\&. Specify
+\FC!libtool\F[]
+to remove them\&.
+.RE
+.PP
+\fBemptydirs\fR
+.RS 4
+Leave empty directories in packages\&.
+.RE
+.PP
+\fBzipman\fR
+.RS 4
+Compress man pages with gzip\&.
+.RE
+.PP
+\fBccache\fR
+.RS 4
+Allow the use of ccache during build\&. More useful in its negative form
+\FC!ccache\F[]
+with select packages that have problems building with ccache\&.
+.RE
+.PP
+\fBdistcc\fR
+.RS 4
+Allow the use of distcc during build\&. More useful in its negative form
+\FC!distcc\F[]
+with select packages that have problems building with distcc\&.
+.RE
+.PP
+\fBmakeflags\fR
+.RS 4
+Allow the use of user\-specific makeflags during build as specified in linkman:makepkg\&.conf[5]\&. More useful in its negative form
+\FC!makeflags\F[]
+with select packages that have problems building with custom makeflags such as
+\FC\-j2\F[]
+(or higher)\&.
+.RE
+.PP
+\fBforce\fR
+.RS 4
+Force the package to be upgraded by a pacman system upgrade operation, even if the version number would normally not trigger such an upgrade\&. This is useful when the version numbering scheme of a package changes (or is alphanumeric)\&. See linkman:pacman[8] for more infomation on version comparisons\&.
+.RE
+.RE
+.SH "build() Function"
+.sp
+In addition to the above directives, the build() bash function comprises the remainder of the PKGBUILD\&. This is directly sourced and executed by makepkg, so anything that bash or the system has available is available for use here\&. Be sure any exotic commands used are covered by \FCmakedepends\F[]\&.
+.sp
+All of the above variables such as \FCpkgname\F[] and \FCpkgver\F[] are available for use in the build function\&. In addition, makepkg defines three variables for your use during the build and install process\&. These three variables are as follows:
+.PP
+\fBstartdir\fR
+.RS 4
+This contains the absolute path to the directory where the PKGBUILD was located, which is usually the output of
+\FC$(pwd)\F[]
+when makepkg is started\&. startdir was most often used in combination with
+\FC/src\F[]
+or
+\FC/pkg\F[]
+postfixes, but use of the
+\FCsrcdir\F[]
+and
+\FCpkgdir\F[]
+variables is preferred\&.
+.RE
+.PP
+\fBsrcdir\fR
+.RS 4
+This points to the directory where makepkg extracts or copies all source files\&. Although it currently is an alias for
+\FC$startdir/src\F[], this assumption should not be assumed true for all future revisions of makepkg\&.
+.RE
+.PP
+\fBpkgdir\fR
+.RS 4
+This points to the directory where makepkg bundles the installed package (this directory will become the root directory of your built package)\&. Although it currently is an alias for
+\FC$startdir/pkg\F[], this assumption should not be assumed true for all future revisions of makepkg\&.
+.RE
+.sp
+If you create any variables of your own in the build function, it is recommended to use the bash \FClocal\F[] keyword to scope the variable to inside the build function\&.
+.SH "Install/Upgrade/Remove Scripting"
+.sp
+Pacman has the ability to store and execute a package\-specific script when it installs, removes, or upgrades a package\&. This allows a package to configure itself after installation and perform an opposite action upon removal\&.
+.sp
+The exact time the script is run varies with each operation:
+.PP
+\fBpre_install\fR
+.RS 4
+script is run right before files are extracted\&. One argument is passed: new package version\&.
+.RE
+.PP
+\fBpost_install\fR
+.RS 4
+script is run right after files are extracted\&. One argument is passed: new package version\&.
+.RE
+.PP
+\fBpre_upgrade\fR
+.RS 4
+script is run right before files are extracted\&. Two arguments are passed in the following order: new package version, old package version\&.
+.RE
+.PP
+\fBpost_upgrade\fR
+.RS 4
+script is run after files are extracted\&. Two arguments are passed in the following order: new package version, old package version\&.
+.RE
+.PP
+\fBpre_remove\fR
+.RS 4
+script is run right before files are removed\&. One argument is passed: old package version\&.
+.RE
+.PP
+\fBpost_remove\fR
+.RS 4
+script is run right after files are removed\&. One argument is passed: old package version\&.
+.RE
+.sp
+To use this feature, create a file such as \fIpkgname\&.install\fR and put it in the same directory as the PKGBUILD script\&. Then use the install directive:
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.BB lightgray
+install=pkgname\&.install
+.EB lightgray
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.sp
+The install script does not need to be specified in the source array\&. A template install file is available with the source distribution of this program, or one may be provided by your distribution\&. For example, Arch Linux provides prototype install files in the ABS tree\&.
+.SH "Development Directives"
+.sp
+makepkg supports building development versions of packages without having to manually update the pkgver in the PKGBUILD\&. This was formerly done using the separate utility \fIversionpkg\fR\&. In order to utilize this functionality, your PKGBUILD must use correct variable names depending on the SCM being fetched from\&.
+.PP
+\fBCVS\fR
+.RS 4
+The generated pkgver will be the date the package is built\&.
+.PP
+\fB_cvsroot\fR
+.RS 4
+The root of the CVS repository\&.
+.RE
+.PP
+\fB_cvsmod\fR
+.RS 4
+The CVS module to fetch\&.
+.RE
+.RE
+.PP
+\fBSVN\fR
+.RS 4
+The generated pkgver will be the latest SVN revision number\&.
+.PP
+\fB_svntrunk\fR
+.RS 4
+The trunk of the SVN repository\&.
+.RE
+.PP
+\fB_svnmod\fR
+.RS 4
+The SVN module to fetch\&.
+.RE
+.RE
+.PP
+\fBGit\fR
+.RS 4
+The generated pkgver will be one formatted by the
+\fIgit\-describe\fR
+command, with
+\fI\-\fR
+characters converted to
+\fI_\fR
+characters\&.
+.PP
+\fB_gitroot\fR
+.RS 4
+The URL (all protocols supported) to the GIT repository\&.
+.RE
+.PP
+\fB_gitname\fR
+.RS 4
+GIT tag or branch to use\&.
+.RE
+.RE
+.PP
+\fBMercurial\fR
+.RS 4
+The generated pkgver will be the hg tip revision number\&.
+.PP
+\fB_hgroot\fR
+.RS 4
+The URL of the mercurial repository\&.
+.RE
+.PP
+\fB_hgrepo\fR
+.RS 4
+The repository to follow\&.
+.RE
+.RE
+.PP
+\fBDarcs\fR
+.RS 4
+The generated pkgver will be the date the package is built\&.
+.PP
+\fB_darcstrunk\fR
+.RS 4
+URL to the repository trunk\&.
+.RE
+.PP
+\fB_darcsmod\fR
+.RS 4
+Darcs module to use\&.
+.RE
+.RE
+.PP
+\fBBazaar\fR
+.RS 4
+The generated pkgver will be the latest Bazaar revision number (revno)\&.
+.PP
+\fB_bzrtrunk\fR
+.RS 4
+URL to the bazaar repository\&.
+.RE
+.PP
+\fB_bzrmod\fR
+.RS 4
+Bazaar module to use\&.
+.RE
+.RE
+.SH "Example"
+.sp
+The following is an example PKGBUILD for the \fIpatch\fR package\&. For more examples, look through the build files of your distribution\(cqs packages\&. For those using Arch Linux, consult the ABS tree\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.BB lightgray
+# Maintainer: Joe User <joe\&.user@example\&.com>
+
+pkgname=patch
+pkgver=2\&.5\&.4
+pkgrel=3
+pkgdesc="A utility to apply patch files to original sources"
+arch=(i686 x86_64)
+url="http://www\&.gnu\&.org/software/patch/patch\&.html"
+license=(\'GPL\')
+groups=(\'base\-devel\')
+depends=(\'glibc\' \'ed\')
+source=(ftp://ftp\&.gnu\&.org/gnu/$pkgname/$pkgname\-$pkgver\&.tar\&.gz)
+md5sums=(\'ee5ae84d115f051d87fcaaef3b4ae782\')
+
+build() {
+  cd $srcdir/$pkgname\-$pkgver
+  \&./configure \-\-prefix=/usr
+  make || return 1
+  make prefix=$pkgdir/usr install
+}
+.EB lightgray
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.SH "See Also"
+.sp
+linkman:makepkg[8], linkman:pacman[8], linkman:makepkg\&.conf[5]
+.sp
+See the pacman website at http://www\&.archlinux\&.org/pacman/ for current information on pacman and its related tools\&.
+.SH "Bugs"
+.sp
+Bugs? You must be kidding, there are no bugs in this software\&. But if we happen to be wrong, send us an email with as much detail as possible to pacman\-dev@archlinux\&.org\&.
+.SH "Authors"
+.sp
+Current maintainers:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Dan McGee <dan@archlinux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Xavier Chantry <shiningxc@gmail\&.com>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aaron Griffin <aaron@archlinux\&.org>
+.RE
+.sp
+Past contributors:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Judd Vinet <jvinet@zeroflux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aurelien Foret <aurelien@archlinux\&.org>
+.RE
+.sp
+See the \fIAUTHORS\fR file for additional contributors\&.

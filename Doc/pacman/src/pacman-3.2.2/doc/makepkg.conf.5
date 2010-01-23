@@ -1,0 +1,421 @@
+.\"     Title: makepkg.conf
+.\"    Author: [see the "Authors" section]
+.\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
+.\"      Date: 2009-01-05
+.\"    Manual: Pacman Manual
+.\"    Source: Pacman 3.2.2
+.\"  Language: English
+.\"
+.TH "MAKEPKG\&.CONF" "5" "2009\-01\-05" "Pacman 3\&.2\&.2" "Pacman Manual"
+.\" -----------------------------------------------------------------
+.\" * (re)Define some macros
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" toupper - uppercase a string (locale-aware)
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de toupper
+.tr aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ
+\\$*
+.tr aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH-xref - format a cross-reference to an SH section
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de SH-xref
+.ie n \{\
+.\}
+.toupper \\$*
+.el \{\
+\\$*
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH - level-one heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SH
+.\" put an extra blank line of space above the head in non-TTY output
+.if t \{\
+.sp 1
+.\}
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[an-margin]u
+.ti 0
+.HTML-TAG ".NH \\n[an-level]"
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+\." make the size of the head bigger
+.ps +3
+.ft B
+.ne (2v + 1u)
+.ie n \{\
+.\" if n (TTY output), use uppercase
+.toupper \\$*
+.\}
+.el \{\
+.nr an-break-flag 0
+.\" if not n (not TTY), use normal case (not uppercase)
+\\$1
+.in \\n[an-margin]u
+.ti 0
+.\" if not n (not TTY), put a border/line under subheading
+.sp -.6
+\l'\n(.lu'
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SS - level-two heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SS
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[IN]u
+.ti \\n[SN]u
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.ps \\n[PS-SS]u
+\." make the size of the head bigger
+.ps +2
+.ft B
+.ne (2v + 1u)
+.if \\n[.$] \&\\$*
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BB/BE - put background/screen (filled box) around block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BB
+.if t \{\
+.sp -.5
+.br
+.in +2n
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EB
+.if t \{\
+.if "\\$2"adjust-for-leading-newline" \{\
+.sp -1
+.\}
+.br
+.di
+.in
+.ll
+.gcolor
+.nr BW \\n(.lu-\\n(.i
+.nr BH \\n(dn+.5v
+.ne \\n(BHu+.5v
+.ie "\\$2"adjust-for-leading-newline" \{\
+\M[\\$1]\h'1n'\v'+.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.el \{\
+\M[\\$1]\h'1n'\v'-.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.in 0
+.sp -.5v
+.nf
+.BX
+.in
+.sp .5v
+.fi
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BM/EM - put colored marker in margin next to block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BM
+.if t \{\
+.br
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EM
+.if t \{\
+.br
+.di
+.ll
+.gcolor
+.nr BH \\n(dn
+.ne \\n(BHu
+\M[\\$1]\D'P -.75n 0 0 \\n(BHu -(\\n[.i]u - \\n(INu - .75n) 0 0 -\\n(BHu'\M[]
+.in 0
+.nf
+.BX
+.in
+.fi
+.\}
+..
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "Name"
+makepkg.conf \- makepkg configuration file
+.SH "Synopsis"
+.sp
+/etc/makepkg\&.conf, ~/\&.makepkg\&.conf
+.SH "Description"
+.sp
+Configuration options for makekpg are stored in makepkg\&.conf\&. This file is sourced, so you can include any special compiler flags you wish to use\&. This is helpful for building for different architectures, or with different optimizations\&. However, only the variables described below are exported to the build environment\&.
+.if n \{\
+.sp
+.\}
+.RS 4
+.BM yellow
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBNote\fR
+.ps -1
+.br
+.sp
+This does not guarantee that all package Makefiles will use your exported variables\&. Some of them are non\-standard\&.
+.sp .5v
+.EM yellow
+.RE
+.sp
+The default file is fairly well commented, so it may be easiest to simply follow directions given there for customization\&.
+.SH "Options"
+.PP
+\fBDLAGENTS=(\fR\'protocol::/path/to/command [options]\' \&...\fB)\fR
+.RS 4
+Sets the download agents used to fetch source files specified with a URL in the linkman:PKGBUILD[5] file\&. Options can be specified for each command as well, and any protocol can have a download agent\&. Several examples are provided in the default makepkg\&.conf\&.
+
+If present,
+\FC%u\F[]
+will be replaced with the download URL\&. Otherwise, the download URL will be placed on the end of the command\&. If present,
+\FC%o\F[]
+will be replaced with the local filename, plus a \(lq\&.part\(rq extension, which allows makepkg to handle resuming file downloads\&.
+.RE
+.PP
+\fBCARCH=\fR"carch"
+.RS 4
+Specifies your computer architecture; possible values include such things as \(lqi686\(rq, \(lqx86_64\(rq, \(lqppc\(rq, etc\&. This should be automatically set on installation\&.
+.RE
+.PP
+\fBCHOST=\fR"chost"
+.RS 4
+A string such as \(lqi686\-pc\-linux\-gnu\(rq, do not touch unless you know what you are doing\&. This can be commented out by most users if desired\&.
+.RE
+.PP
+\fBCFLAGS=\fR"cflags"
+.RS 4
+Flags used for the C compiler\&. This is a key part to the use of makepkg\&. Usually several options are specified, and the most common string resembles something like this: \(lq\-march=i686 \-O2 \-pipe\(rq\&. Another useful option may be
+\FC\-mcpu\F[]
+in place of
+\FC\-march\F[]\&. Read gcc(1) for more details on the wide variety of compiler flags available\&.
+.RE
+.PP
+\fBCXXFLAGS=\fR"cxxflags"
+.RS 4
+Flags used for the C++ compiler; see CFLAGS for more info\&.
+.RE
+.PP
+\fBMAKEFLAGS=\fR"makeflags"
+.RS 4
+This is often used to set the number of jobs used, for example,
+\FC\-j2\F[]\&. Other flags that make accepts can also be passed\&.
+.RE
+.PP
+\fBBUILDENV=(\fRfakeroot !distcc color !ccache !xdelta\fB)\fR
+.RS 4
+This array contains options that affect the build environment, the defaults are shown here\&. All options should always be left in the array; to enable or disable an option simply remove or place an \(lq!\(rq at the front of the option\&. Each works as follows:
+.PP
+\fBfakeroot\fR
+.RS 4
+Allow building packages as a non\-root user\&. This is highly recommended\&.
+.RE
+.PP
+\fBdistcc\fR
+.RS 4
+Use the distributed C/C++/ObjC compiler to spread compilation among multiple machines\&. If this is enabled,
+\FCDISTCC_HOSTS\F[]
+must be specified as well\&.
+.RE
+.PP
+\fBcolor\fR
+.RS 4
+Colorize output messages, making output easier to read\&.
+.RE
+.PP
+\fBccache\fR
+.RS 4
+Use ccache to cache compilation by default\&. This allows for faster compiles if you are continuously recompiling the same packages\&. It can be disabled for individual packages by placing
+\FC!ccache\F[]
+in the PKGBUILD options array\&.
+.RE
+.PP
+\fBxdelta\fR
+.RS 4
+Generate an xdelta binary patch from previous to current package\&. The previous package must be available in the makepkg cache directory for this to occur\&.
+.RE
+.RE
+.PP
+\fBDISTCC_HOSTS=\fR"host1 \&..."
+.RS 4
+If using DistCC, this is used to specify a space\-delimited list of hosts running in the DistCC cluster\&. In addition, you will want to modify your
+\FCMAKEFLAGS\F[]\&.
+.RE
+.PP
+\fBOPTIONS=(\fRstrip docs libtool emptydirs zipman\fB)\fR
+.RS 4
+This array contains options that affect the default packaging\&. They are equivalent to options that can be placed in the PKGBUILD; the defaults are shown here\&. All options should always be left in the array; to enable or disable an option simply remove or place an \(lq!\(rq at the front of the option\&. Each works as follows:
+.PP
+\fBstrip\fR
+.RS 4
+Strip symbols from binaries and libraries\&. If you frequently use a debugger on programs or libraries, it may be helpful to disable this option\&.
+.RE
+.PP
+\fBdocs\fR
+.RS 4
+Save doc and info directories\&. If you wish to delete doc and info directories, specify \(oq!docs\(cq in the array\&.
+.RE
+.PP
+\fBlibtool\fR
+.RS 4
+Leave libtool (\&.la) files in packages\&. Specify \(oq!libtool\(cq to remove them\&.
+.RE
+.PP
+\fBemptydirs\fR
+.RS 4
+Leave empty directories in packages\&.
+.RE
+.PP
+\fBzipman\fR
+.RS 4
+Compress man pages with gzip\&.
+.RE
+.RE
+.PP
+\fBINTEGRITY_CHECK=(\fRcheck1 \&...\fB)\fR
+.RS 4
+File integrity checks to use\&. Multiple checks may be specified; this affects both generation and checking\&. The current valid options are:
+\FCmd5\F[],
+\FCsha1\F[],
+\FCsha256\F[],
+\FCsha384\F[], and
+\FCsha512\F[]\&.
+.RE
+.PP
+\fBDOC_DIRS=(\fRusr/{,share/}{info,doc} \&...\fB)\fR
+.RS 4
+If "!docs" is specified in the OPTIONS array, this variable will instruct makepkg where to look to remove docs\&. If you build packages that are located in opt/, you may need to add the directory to this array\&.
+\fBNOTE:\fR
+Do not add the leading slash to the directory name\&.
+.RE
+.PP
+\fBSTRIP_DIRS=(\fRbin lib sbin usr/{bin,lib} \&...\fB)\fR
+.RS 4
+If "strip" is specified in the OPTIONS array, this variable will instruct makepkg where to look to for files to strip\&. If you build packages that are located in opt/, you may need to add the directory to this array\&.
+\fBNOTE:\fR
+Do not add the leading slash to the directory name\&.
+.RE
+.PP
+\fBPKGDEST=\fR"/path/to/folder"
+.RS 4
+If this value is not set, packages will by default be placed in the current directory (location of the linkman:PKGBUILD[5])\&. Many people like to keep all their packages in one place so this option allows this behavior\&. A common location is \(lq/home/packages\(rq\&.
+.RE
+.PP
+\fBSRCDEST=\fR"/path/to/folder"
+.RS 4
+If this value is not set, downloaded source files will only be stored in the current directory\&. Many people like to keep all source files in a central location for easy cleanup, so this path can be set here\&.
+.RE
+.PP
+\fBPACKAGER=\fR"John Doe <john@doe\&.com>"
+.RS 4
+This value is used when querying a package to see who was the builder\&. It is recommended you change this to your name and email address\&.
+.RE
+.PP
+\fBBUILDSCRIPT\fR, \fBPKGEXT\fR, \fBSRCEXT\fR, \fBDB_COMPRESSION\fR, \fBDB_CHECKSUMS\fR
+.RS 4
+Do not touch these unless you know what you are doing\&.
+.RE
+.SH "See Also"
+.sp
+linkman:makepkg[8], linkman:pacman[8], linkman:PKGBUILD[5]
+.sp
+See the pacman website at http://www\&.archlinux\&.org/pacman/ for current information on pacman and its related tools\&.
+.SH "Bugs"
+.sp
+Bugs? You must be kidding, there are no bugs in this software\&. But if we happen to be wrong, send us an email with as much detail as possible to pacman\-dev@archlinux\&.org\&.
+.SH "Authors"
+.sp
+Current maintainers:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Dan McGee <dan@archlinux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Xavier Chantry <shiningxc@gmail\&.com>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aaron Griffin <aaron@archlinux\&.org>
+.RE
+.sp
+Past contributors:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Judd Vinet <jvinet@zeroflux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aurelien Foret <aurelien@archlinux\&.org>
+.RE
+.sp
+See the \fIAUTHORS\fR file for additional contributors\&.

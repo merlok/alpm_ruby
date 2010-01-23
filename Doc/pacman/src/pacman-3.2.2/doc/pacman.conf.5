@@ -1,0 +1,523 @@
+.\"     Title: pacman.conf
+.\"    Author: [see the "Authors" section]
+.\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
+.\"      Date: 2009-01-05
+.\"    Manual: Pacman Manual
+.\"    Source: Pacman 3.2.2
+.\"  Language: English
+.\"
+.TH "PACMAN\&.CONF" "5" "2009\-01\-05" "Pacman 3\&.2\&.2" "Pacman Manual"
+.\" -----------------------------------------------------------------
+.\" * (re)Define some macros
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" toupper - uppercase a string (locale-aware)
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de toupper
+.tr aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ
+\\$*
+.tr aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH-xref - format a cross-reference to an SH section
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de SH-xref
+.ie n \{\
+.\}
+.toupper \\$*
+.el \{\
+\\$*
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH - level-one heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SH
+.\" put an extra blank line of space above the head in non-TTY output
+.if t \{\
+.sp 1
+.\}
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[an-margin]u
+.ti 0
+.HTML-TAG ".NH \\n[an-level]"
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+\." make the size of the head bigger
+.ps +3
+.ft B
+.ne (2v + 1u)
+.ie n \{\
+.\" if n (TTY output), use uppercase
+.toupper \\$*
+.\}
+.el \{\
+.nr an-break-flag 0
+.\" if not n (not TTY), use normal case (not uppercase)
+\\$1
+.in \\n[an-margin]u
+.ti 0
+.\" if not n (not TTY), put a border/line under subheading
+.sp -.6
+\l'\n(.lu'
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SS - level-two heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SS
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[IN]u
+.ti \\n[SN]u
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.ps \\n[PS-SS]u
+\." make the size of the head bigger
+.ps +2
+.ft B
+.ne (2v + 1u)
+.if \\n[.$] \&\\$*
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BB/BE - put background/screen (filled box) around block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BB
+.if t \{\
+.sp -.5
+.br
+.in +2n
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EB
+.if t \{\
+.if "\\$2"adjust-for-leading-newline" \{\
+.sp -1
+.\}
+.br
+.di
+.in
+.ll
+.gcolor
+.nr BW \\n(.lu-\\n(.i
+.nr BH \\n(dn+.5v
+.ne \\n(BHu+.5v
+.ie "\\$2"adjust-for-leading-newline" \{\
+\M[\\$1]\h'1n'\v'+.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.el \{\
+\M[\\$1]\h'1n'\v'-.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.in 0
+.sp -.5v
+.nf
+.BX
+.in
+.sp .5v
+.fi
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BM/EM - put colored marker in margin next to block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BM
+.if t \{\
+.br
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EM
+.if t \{\
+.br
+.di
+.ll
+.gcolor
+.nr BH \\n(dn
+.ne \\n(BHu
+\M[\\$1]\D'P -.75n 0 0 \\n(BHu -(\\n[.i]u - \\n(INu - .75n) 0 0 -\\n(BHu'\M[]
+.in 0
+.nf
+.BX
+.in
+.fi
+.\}
+..
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "Name"
+pacman.conf \- pacman package manager configuration file
+.SH "Synopsis"
+.sp
+/etc/pacman\&.conf
+.SH "Description"
+.sp
+Pacman, using linkman:libalpm[3], will attempt to read pacman\&.conf each time it is invoked\&. This configuration file is divided into sections or repositories\&. Each section defines a package repository that pacman can use when searching for packages in \fI\-\-sync\fR mode\&. The exception to this is the options section, which defines global options\&.
+.SH "Example"
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.if t \{\
+.sp -1
+.\}
+.BB lightgray adjust-for-leading-newline
+.sp -1
+
+
+\&.ft C
+#
+# pacman\&.conf
+#
+[options]
+NoUpgrade = etc/passwd etc/group etc/shadow
+NoUpgrade = etc/fstab
+
+[core]
+Include = /etc/pacman\&.d/core
+
+[custom]
+Server = file:///home/pkgs
+\&.ft
+
+.EB lightgray adjust-for-leading-newline
+.if t \{\
+.sp 1
+.\}
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.if n \{\
+.sp
+.\}
+.RS 4
+.BM yellow
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBNote\fR
+.ps -1
+.br
+.sp
+Each directive must be in CamelCase\&. If the case isn\(cqt respected, the directive won\(cqt be recognized\&. For example\&. noupgrade or NOUPGRADE will not work\&.
+.sp .5v
+.EM yellow
+.RE
+.SH "Options"
+.PP
+\fBRootDir =\fR path/to/root
+.RS 4
+Set the default root directory for pacman to install to\&. This option is used if you want to install a package on a temporary mounted partition which is "owned" by another system, or for a chroot install\&.
+\fBNOTE\fR: If database path or logfile are not specified on either the command line or in linkman:pacman\&.conf[5], their default location will be inside this root path\&.
+.RE
+.PP
+\fBDBPath =\fR path/to/db/dir
+.RS 4
+Overrides the default location of the toplevel database directory\&. A typical default is \(lq/var/lib/pacman/\(rq\&. Most users will not need to set this option\&.
+\fBNOTE\fR: if specified, this is an absolute path and the root path is not automatically prepended\&.
+.RE
+.PP
+\fBCacheDir =\fR path/to/cache/dir
+.RS 4
+Overrides the default location of the package cache directory\&. A typical default is \(lq/var/cache/pacman/pkg/\(rq\&. Multiple cache directories can be specified, and they are tried in the order they are listed in the config file\&. If a file is not found in any cache directory, it will be downloaded to the first cache directory with write access\&.
+\fBNOTE\fR: this is an absolute path, the root path is not automatically prepended\&.
+.RE
+.PP
+\fBLogFile =\fR \fI/path/to/file\fR
+.RS 4
+Overrides the default location of the pacman log file\&. A typical default is \(lq/var/log/pacman\&.log\(rq\&. This is an absolute path and the root directory is not prepended\&.
+.RE
+.PP
+\fBHoldPkg =\fR package \&...
+.RS 4
+If a user tries to
+\fI\-\-remove\fR
+a package that\(cqs listed in
+\FCHoldPkg\F[], pacman will ask for confirmation before proceeding\&.
+.RE
+.PP
+\fBIgnorePkg =\fR package \&...
+.RS 4
+Instructs pacman to ignore any upgrades for this package when performing a
+\fI\-\-sysupgrade\fR\&.
+.RE
+.PP
+\fBSyncFirst =\fR package \&...
+.RS 4
+Instructs pacman to check for newer version of these packages before any sync operation\&. The user will have the choice to either cancel the current operation and upgrade these packages first or go on with the current operation\&. This option is typically used with the
+\fIpacman\fR
+package\&.
+.RE
+.PP
+\fBIgnoreGroup =\fR group \&...
+.RS 4
+Instructs pacman to ignore any upgrades for all packages in this group when performing a
+\fI\-\-sysupgrade\fR\&.
+.RE
+.PP
+\fBInclude =\fR path
+.RS 4
+Include another config file\&. This file can include repositories or general configuration options\&.
+.RE
+.PP
+\fBXferCommand =\fR /path/to/command %u
+.RS 4
+If set, an external program will be used to download all remote files\&. All instances of
+\FC%u\F[]
+will be replaced with the download URL\&. If present, instances of
+\FC%o\F[]
+will be replaced with the local filename, plus a \(lq\&.part\(rq extension, which allows programs like wget to do file resumes properly\&.
+
+This option is useful for users who experience problems with built\-in http/ftp support, or need the more advanced proxy support that comes with utilities like wget\&.
+.RE
+.PP
+\fBNoPassiveFtp\fR
+.RS 4
+Disables passive ftp connections when downloading packages\&. (aka Active Mode)
+.RE
+.PP
+\fBNoUpgrade =\fR file \&...
+.RS 4
+All files listed with a
+\FCNoUpgrade\F[]
+directive will never be touched during a package install/upgrade\&. These files refer to files in the package archive, so do not include the leading slash (the RootDir) when specifying them\&.
+.RE
+.PP
+\fBNoExtract =\fR file \&...
+.RS 4
+All files listed with a
+\FCNoExtract\F[]
+directive will never be extracted from a package into the filesystem\&. This can be useful when you don\(cqt want part of a package to be installed\&. For example, if your httpd root uses an
+\fIindex\&.php\fR, then you would not want the
+\fIindex\&.html\fR
+file to be extracted from the
+\fIapache\fR
+package\&. These files refer to files in the package archive, so do not include the leading slash (the RootDir) when specifying them\&.
+.RE
+.PP
+\fBCleanMethod =\fR KeepInstalled | KeepCurrent
+.RS 4
+If set to
+\FCKeepInstalled\F[]
+(the default), the
+\fI\-Sc\fR
+operation will clean packages that are no longer installed (not present in the local database)\&. If set to
+\FCKeepCurrent\F[],
+\fI\-Sc\fR
+will clean outdated packages (not present in any sync database)\&. The second behavior is useful when the package cache is shared among multiple machines, where the local databases are usually different, but the sync databases in use could be the same\&.
+.RE
+.PP
+\fBUseSyslog\fR
+.RS 4
+Log action messages through syslog()\&. This will insert log entries into \(lq/var/log/messages\(rq or equivalent\&.
+.RE
+.PP
+\fBShowSize\fR
+.RS 4
+Display the size of individual packages for
+\fI\-\-sync\fR
+and
+\fI\-\-query\fR
+modes\&.
+.RE
+.PP
+\fBUseDelta\fR
+.RS 4
+Download delta files instead of complete packages if possible\&. Requires the xdelta program to be installed\&.
+.RE
+.PP
+\fBTotalDownload\fR
+.RS 4
+When downloading, display the amount downloaded, download rate, ETA, and completed percentage of the entire download list rather than the percent of each individual download target\&. The progress bar is still based solely on the current file download\&.
+.RE
+.SH "Repository Sections"
+.sp
+Each repository section defines a section name and at least one location where the packages can be found\&. The section name is defined by the string within square brackets (the two above are \fIcurrent\fR and \fIcustom\fR)\&. Locations are defined with the \fIServer\fR directive and follow a URL naming structure\&. If you want to use a local directory, you can specify the full path with a \(lqfile://\(rq prefix, as shown above\&.
+.sp
+A common way to define DB locations utilizes the \fIInclude\fR directive\&. For each repository defined in the configuration file, a single \fIInclude\fR directive can contain a file that lists the servers for that repository\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.if t \{\
+.sp -1
+.\}
+.BB lightgray adjust-for-leading-newline
+.sp -1
+
+
+\&.ft C
+[core]
+# use this repository first
+Server = ftp://ftp\&.archlinux\&.org/core/os/arch
+# next use servers as defined in the mirrorlist below
+Include = /etc/pacman\&.d/mirrorlist
+\&.ft
+
+.EB lightgray adjust-for-leading-newline
+.if t \{\
+.sp 1
+.\}
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.sp
+During parsing, pacman will define the \FC$repo\F[] variable to the name of the current section\&. This is often utilized in files specified using the \fIInclude\fR directive so all repositories can use the same mirrorfile\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.if t \{\
+.sp -1
+.\}
+.BB lightgray adjust-for-leading-newline
+.sp -1
+
+
+\&.ft C
+Server = ftp://ftp\&.archlinux\&.org/$repo/os/arch
+\&.ft
+
+.EB lightgray adjust-for-leading-newline
+.if t \{\
+.sp 1
+.\}
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.sp
+The order of repositories in the configuration files matters; repositories listed first will take precedence over those listed later in the file when packages in two repositories have identical names, regardless of version number\&.
+.SH "Using Your Own Repository"
+.sp
+If you have numerous custom packages of your own, it is often easier to generate your own custom local repository than install them all with the \fI\-\-upgrade\fR option\&. All you need to do is generate a compressed package database in the directory with these packages so pacman can find it when run with \fI\-\-refresh\fR\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.BB lightgray
+repo\-add /home/pkgs/custom\&.db\&.tar\&.gz /home/pkgs/*\&.pkg\&.tar\&.gz
+.EB lightgray
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.sp
+The above command will generate a compressed database named \fI/home/pkgs/custom\&.db\&.tar\&.gz\fR\&. Note that the database must be of the form the configuration file\&. That\(cqs it! Now configure your custom section in the configuration file as shown in the config example above\&. Pacman will now use your package repository\&. If you add new packages to the repository, remember to re\-generate the database and use pacman\(cqs \fI\-\-refresh\fR option\&.
+.sp
+For more information on the repo\-add command, see \(lqrepo\-add \-\-help\(rq or linkman:repo\-add[8]\&.
+.SH "See Also"
+.sp
+linkman:pacman[8], linkman:libalpm[3]
+.sp
+See the pacman website at http://www\&.archlinux\&.org/pacman/ for current information on pacman and its related tools\&.
+.SH "Bugs"
+.sp
+Bugs? You must be kidding, there are no bugs in this software\&. But if we happen to be wrong, send us an email with as much detail as possible to pacman\-dev@archlinux\&.org\&.
+.SH "Authors"
+.sp
+Current maintainers:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Dan McGee <dan@archlinux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Xavier Chantry <shiningxc@gmail\&.com>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aaron Griffin <aaron@archlinux\&.org>
+.RE
+.sp
+Past contributors:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Judd Vinet <jvinet@zeroflux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aurelien Foret <aurelien@archlinux\&.org>
+.RE
+.sp
+See the \fIAUTHORS\fR file for additional contributors\&.

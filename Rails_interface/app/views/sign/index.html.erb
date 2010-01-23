@@ -1,0 +1,10 @@
+<%= javascript_include_tag "prototype" %>
+<h1> lista pacchetti </h1>
+    <% remote_form_for [@sings, Sign.check] do |f| -%>
+  	<% packages=@signs["core"] %> 
+		<% packages.each_pair do |package,data| %>
+        	<%= f.label package%>
+			<%= f.check_box(package, {:checked => data[:repo]=="local"}, "yes", "no") %> <%= package %><br>
+        <% end %>
+  	<% end -%>
+%>

@@ -1,0 +1,632 @@
+.\"     Title: pacman
+.\"    Author: [see the "Authors" section]
+.\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
+.\"      Date: 2009-01-05
+.\"    Manual: Pacman Manual
+.\"    Source: Pacman 3.2.2
+.\"  Language: English
+.\"
+.TH "PACMAN" "8" "2009\-01\-05" "Pacman 3\&.2\&.2" "Pacman Manual"
+.\" -----------------------------------------------------------------
+.\" * (re)Define some macros
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" toupper - uppercase a string (locale-aware)
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de toupper
+.tr aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ
+\\$*
+.tr aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH-xref - format a cross-reference to an SH section
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de SH-xref
+.ie n \{\
+.\}
+.toupper \\$*
+.el \{\
+\\$*
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH - level-one heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SH
+.\" put an extra blank line of space above the head in non-TTY output
+.if t \{\
+.sp 1
+.\}
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[an-margin]u
+.ti 0
+.HTML-TAG ".NH \\n[an-level]"
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+\." make the size of the head bigger
+.ps +3
+.ft B
+.ne (2v + 1u)
+.ie n \{\
+.\" if n (TTY output), use uppercase
+.toupper \\$*
+.\}
+.el \{\
+.nr an-break-flag 0
+.\" if not n (not TTY), use normal case (not uppercase)
+\\$1
+.in \\n[an-margin]u
+.ti 0
+.\" if not n (not TTY), put a border/line under subheading
+.sp -.6
+\l'\n(.lu'
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SS - level-two heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SS
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[IN]u
+.ti \\n[SN]u
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.ps \\n[PS-SS]u
+\." make the size of the head bigger
+.ps +2
+.ft B
+.ne (2v + 1u)
+.if \\n[.$] \&\\$*
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BB/BE - put background/screen (filled box) around block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BB
+.if t \{\
+.sp -.5
+.br
+.in +2n
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EB
+.if t \{\
+.if "\\$2"adjust-for-leading-newline" \{\
+.sp -1
+.\}
+.br
+.di
+.in
+.ll
+.gcolor
+.nr BW \\n(.lu-\\n(.i
+.nr BH \\n(dn+.5v
+.ne \\n(BHu+.5v
+.ie "\\$2"adjust-for-leading-newline" \{\
+\M[\\$1]\h'1n'\v'+.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.el \{\
+\M[\\$1]\h'1n'\v'-.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.in 0
+.sp -.5v
+.nf
+.BX
+.in
+.sp .5v
+.fi
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BM/EM - put colored marker in margin next to block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BM
+.if t \{\
+.br
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EM
+.if t \{\
+.br
+.di
+.ll
+.gcolor
+.nr BH \\n(dn
+.ne \\n(BHu
+\M[\\$1]\D'P -.75n 0 0 \\n(BHu -(\\n[.i]u - \\n(INu - .75n) 0 0 -\\n(BHu'\M[]
+.in 0
+.nf
+.BX
+.in
+.fi
+.\}
+..
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "Name"
+pacman \- package manager utility
+.SH "Synopsis"
+.sp
+\fIpacman\fR <operation> [options] [packages]
+.SH "Description"
+.sp
+Pacman is a package management utility that tracks installed packages on a Linux system\&. It features dependency support, package groups, install and uninstall hooks, and the ability to sync your local machine with a remote ftp server to automatically upgrade packages\&. Pacman packages are a zipped tar format\&.
+.sp
+Since version 3\&.0\&.0, pacman has been the frontend to linkman:libalpm[3], the "Arch Linux Package Management" library\&. This library allows alternative front ends to be written (for instance, a GUI front end)\&.
+.SH "Operations"
+.PP
+\fB\-Q, \-\-query\fR
+.RS 4
+Query the package database\&. This operation allows you to view installed packages and their files, as well as meta\-information about individual packages (dependencies, conflicts, install date, build date, size)\&. This can be run against the local package database or can be used on individual
+\fI\&.tar\&.gz\fR
+packages\&. See
+Query Options
+below\&.
+.RE
+.PP
+\fB\-R, \-\-remove\fR
+.RS 4
+Remove a package from the system\&. Groups can also be specified to be removed, in which case every package in that group will be removed\&. Files belonging to the specified package will be deleted, and the database will be updated\&. Most configuration files will be saved with a
+\FC\&.pacsave\F[]
+extension unless the
+\fI\-\-nosave\fR
+option is used\&. See
+Remove Options
+below\&.
+.RE
+.PP
+\fB\-S, \-\-sync\fR
+.RS 4
+Synchronize packages\&. Packages are installed directly from the ftp servers, including all dependencies required to run the packages\&. For example,
+\FCpacman \-S qt\F[]
+will download and install qt and all the packages it depends on\&. If a package name exists in more than one repo, the repo can be explicitly specified to clarify the package to install:
+\FCpacman \-S testing/qt\F[]\&. You can also specify version requirements:
+\FCpacman \-S "bash>=3\&.2"\F[]\&. (Quotes are needed, otherwise your shell interprets ">" as redirection to file\&.)
+.sp
+In addition to packages, groups can be specified as well\&. For example, if gnome is a defined package group, then
+\FCpacman \-S gnome\F[]
+will install every package in the gnome group, as well as the dependencies of those packages\&.
+.sp
+Packages which provide other packages are also handled\&. For example,
+\FCpacman \-S foo\F[]
+will first look for a foo package\&. If foo is not found, packages which provide the same functionality as foo will be searched for\&. If any package is found, it will be installed\&.
+.sp
+You can also use
+\FCpacman \-Su\F[]
+to upgrade all packages that are out of date\&. See
+Sync Options
+below\&. When upgrading, pacman performs version comparison to determine which packages need upgrading\&. This behavior operates as follows:
+.sp
+.if n \{\
+.RS 4
+.\}
+.fam C
+.ps -1
+.nf
+.BB lightgray
+Alphanumeric:
+  1\&.0a < 1\&.0alpha < 1\&.0b < 1\&.0beta < 1\&.0p < 1\&.0pre < 1\&.0rc < 1\&.0
+Numeric:
+  1 < 1\&.0 < 1\&.1 < 1\&.1\&.1 < 1\&.2 < 2\&.0 < 3\&.0\&.0
+.EB lightgray
+.fi
+.fam
+.ps +1
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+\fB\-U, \-\-upgrade\fR
+.RS 4
+Upgrade or add a package to the system\&. Either a URL or file path can be specified\&. This is a "remove\-then\-add" process\&. See
+Handling Config Files
+for an explanation on how pacman takes care of config files\&.
+.RE
+.PP
+\fB\-V, \-\-version\fR
+.RS 4
+Display version and exit\&.
+.RE
+.PP
+\fB\-h, \-\-help\fR
+.RS 4
+Display syntax for the given operation\&. If no operation was supplied then the general syntax is shown\&.
+.RE
+.SH "Options"
+.PP
+\fB\-\-asdeps\fR
+.RS 4
+Install packages non\-explicitly; in other words, fake their install reason to be installed as a dependency\&. This is useful for makepkg and other build from source tools that need to install dependencies before building the package\&.
+.RE
+.PP
+\fB\-\-asexplicit\fR
+.RS 4
+Install packages explicitly; in other words, fake their install reason to be explicitly installed\&. This is useful if you want to mark a dependency as explicitly installed so it will not be removed by the
+\fI\-\-recursive\fR
+remove operation\&.
+.RE
+.PP
+\fB\-b, \-\-dbpath\fR <\fIpath\fR>
+.RS 4
+Specify an alternative database location (a typical default is \(lq/var/lib/pacman\(rq)\&. This should not be used unless you know what you are doing\&.
+\fBNOTE\fR: if specified, this is an absolute path and the root path is not automatically prepended\&.
+.RE
+.PP
+\fB\-d, \-\-nodeps\fR
+.RS 4
+Skips all dependency checks\&. Normally, pacman will always check a package\(cqs dependency fields to ensure that all dependencies are installed and there are no package conflicts in the system\&.
+.RE
+.PP
+\fB\-f, \-\-force\fR
+.RS 4
+Bypass file conflict checks and overwrite conflicting files\&. If the package that is about to be installed contains files that are already installed, this option will cause all those files to be overwritten\&. This option should be used with care, ideally not at all\&.
+.RE
+.PP
+\fB\-r, \-\-root\fR <\fIpath\fR>
+.RS 4
+Specify an alternative installation root (default is \(lq/\(rq)\&. This should not be used as a way to install software into \(lq/usr/local\(rq instead of \(lq/usr\(rq\&. This option is used if you want to install a package on a temporary mounted partition which is "owned" by another system\&.
+\fBNOTE\fR: if database path or logfile are not specified on either the command line or in linkman:pacman\&.conf[5], their default location will be inside this root path\&.
+.RE
+.PP
+\fB\-v, \-\-verbose\fR
+.RS 4
+Output paths such as as the Root, Conf File, DB Path, Cache Dirs, etc\&.
+.RE
+.PP
+\fB\-\-cachedir\fR <\fIdir\fR>
+.RS 4
+Specify an alternative package cache location (a typical default is \(lq/var/cache/pacman/pkg\(rq)\&. Multiple cache directories can be specified, and they are tried in the order they are passed to pacman\&.
+\fBNOTE\fR: this is an absolute path, the root path is not automatically prepended\&.
+.RE
+.PP
+\fB\-\-config\fR <\fIfile\fR>
+.RS 4
+Specify an alternate configuration file\&.
+.RE
+.PP
+\fB\-\-logfile\fR <\fIfile\fR>
+.RS 4
+Specify an alternate log file\&. This is an absolute path, regardless of the installation root setting\&.
+.RE
+.PP
+\fB\-\-noconfirm\fR
+.RS 4
+Bypass any and all "Are you sure?" messages\&. It\(cqs not a good idea to do this unless you want to run pacman from a script\&.
+.RE
+.PP
+\fB\-\-noprogressbar\fR
+.RS 4
+Do not show a progress bar when downloading files\&. This can be useful for scripts that call pacman and capture the output\&.
+.RE
+.PP
+\fB\-\-noscriptlet\fR
+.RS 4
+If an install scriptlet exists, do not execute it\&. Do not use this unless you know what you are doing\&.
+.RE
+.SH "Query Options"
+.PP
+\fB\-c, \-\-changelog\fR
+.RS 4
+View the ChangeLog of a package\&. Not every package will provide one but it will be shown if available\&.
+.RE
+.PP
+\fB\-d, \-\-deps\fR
+.RS 4
+List all packages installed as dependencies\&. This option can be combined with
+\fI\-t\fR
+for listing real orphans\- packages that were installed as dependencies but are no longer required by any installed package\&. (\fI\-Qdt\fR
+is equivalent to the pacman 3\&.0\&.X
+\fI\-Qe\fR
+option\&.)
+.RE
+.PP
+\fB\-e, \-\-explicit\fR
+.RS 4
+List all packages explicitly installed\&. This option can be combined with
+\fI\-t\fR
+to list top\-level packages\- those packages that were explicitly installed but are not required by any other package\&. (\fI\-Qet\fR
+is equivalent to the pacman 2\&.9\&.X
+\fI\-Qe\fR
+option\&.)
+.RE
+.PP
+\fB\-g, \-\-groups\fR
+.RS 4
+Display all packages that are members of a named group\&. If a name is not specified, list all grouped packages\&.
+.RE
+.PP
+\fB\-i, \-\-info\fR
+.RS 4
+Display information on a given package\&. The
+\fI\-p\fR
+option can be used if querying a package file instead of the local database\&. Passing two
+\fI\-\-info\fR
+or
+\fI\-i\fR
+flags will also display the list of backup files and their modification states\&.
+.RE
+.PP
+\fB\-l, \-\-list\fR
+.RS 4
+List all files owned by a given package\&. Multiple packages can be specified on the command line\&.
+.RE
+.PP
+\fB\-m, \-\-foreign\fR
+.RS 4
+Restrict or filter output to packages that were not found in the sync database(s)\&. Typically these are packages that were downloaded manually and installed with
+\fI\-\-upgrade\fR\&.
+.RE
+.PP
+\fB\-o, \-\-owns\fR <\fIfile\fR>
+.RS 4
+Search for the package that owns file\&. The path can be relative or absolute\&.
+.RE
+.PP
+\fB\-p, \-\-file\fR
+.RS 4
+Signifies that the package supplied on the command line is a file and not an entry in the database\&. The file will be decompressed and queried\&. This is useful in combination with
+\fI\-\-info\fR
+and
+\fI\-\-list\fR\&.
+.RE
+.PP
+\fB\-q, \-\-quiet\fR
+.RS 4
+Show less information for certain query operations\&. Search will only show package names and not version, group, and description information; a bare query will only show package names rather than names and versions\&.
+.RE
+.PP
+\fB\-s, \-\-search\fR <\fIregexp\fR>
+.RS 4
+This will search each locally\-installed package for names or descriptions that match
+\FCregexp\F[]\&.
+.RE
+.PP
+\fB\-t, \-\-unrequired\fR
+.RS 4
+Restrict or filter output to packages not required by any currently installed package\&.
+.RE
+.PP
+\fB\-u, \-\-upgrades\fR
+.RS 4
+Lists all packages that are out of date on the local system\&. This option works best if the sync database is refreshed using
+\fI\-Sy\fR\&.
+.RE
+.SH "Remove Options"
+.PP
+\fB\-c, \-\-cascade\fR
+.RS 4
+Remove all target packages, as well as all packages that depend on one or more target packages\&. This operation is recursive, and must be used with care since it can remove many potentially needed packages\&.
+.RE
+.PP
+\fB\-k, \-\-keep\fR
+.RS 4
+Removes the database entry only\&. Leaves all files in place\&.
+.RE
+.PP
+\fB\-n, \-\-nosave\fR
+.RS 4
+Instructs pacman to ignore file backup designations\&. Normally, when a file is removed from the system the database is checked to see if the file should be renamed with a \(lq\&.pacsave\(rq extension\&.
+.RE
+.PP
+\fB\-s, \-\-recursive\fR
+.RS 4
+Remove each target specified including all of their dependencies, provided that (A) they are not required by other packages; and (B) they were not explicitly installed by the user\&. This operation is recursive and analogous to a backwards
+\fI\-\-sync\fR
+operation, and helps keep a clean system without orphans\&. If you want to omit condition (B), pass this option twice\&.
+.RE
+.PP
+\fB\-u, \-\-unneeded\fR
+.RS 4
+Removes the targets that are not required by any other packages\&. This is mostly useful when removing a group without using the
+\fI\-c\fR
+option, to avoid breaking any dependencies\&.
+.RE
+.SH "Sync Options"
+.PP
+\fB\-c, \-\-clean\fR
+.RS 4
+Remove packages that are no longer installed from the cache as well as currently unused sync databases to free up disk space\&. When pacman downloads packages, it saves them in a cache directory\&. In addition, databases are saved for every sync DB you download from, and are not deleted even if they are removed from the configuration file linkman:pacman\&.conf[5]\&. Use one
+\fI\-\-clean\fR
+switch to only remove packages that are no longer installed; use two to remove all packages from the cache\&. In both cases, you will have a yes or no option to remove packages and/or unused downloaded databases\&.
+.sp
+If you use a network shared cache, see the
+\fICleanMethod\fR
+option in linkman:pacman\&.conf[5]\&.
+.RE
+.PP
+\fB\-g, \-\-groups\fR
+.RS 4
+Display all the members for each package group specified\&. If no group names are provided, all groups will be listed; pass the flag twice to view all groups and their members\&.
+.RE
+.PP
+\fB\-i, \-\-info\fR
+.RS 4
+Display dependency and other information for a given package\&. This will search through all repositories for a matching package\&.
+.RE
+.PP
+\fB\-l, \-\-list\fR
+.RS 4
+List all packages in the specified repositories\&. Multiple repositories can be specified on the command line\&.
+.RE
+.PP
+\fB\-p, \-\-print\-uris\fR
+.RS 4
+Print out URIs for each package that will be installed, including any dependencies yet to be installed\&. These can be piped to a file and downloaded at a later time, using a program like wget\&.
+.RE
+.PP
+\fB\-q, \-\-quiet\fR
+.RS 4
+Show less information for certain sync operations\&. Search will only show package names and not version, group, and description information; list will only show package names and omit databases and versions\&.
+.RE
+.PP
+\fB\-s, \-\-search\fR <\fIregexp\fR>
+.RS 4
+This will search each package in the sync databases for names or descriptions that match
+\FCregexp\F[]\&.
+.RE
+.PP
+\fB\-u, \-\-sysupgrade\fR
+.RS 4
+Upgrades all packages that are out of date\&. Each currently\-installed package will be examined and upgraded if a newer package exists\&. A report of all packages to upgrade will be presented and the operation will not proceed without user confirmation\&. Dependencies are automatically resolved at this level and will be installed/upgraded if necessary\&.
+.RE
+.PP
+\fB\-w, \-\-downloadonly\fR
+.RS 4
+Retrieve all packages from the server, but do not install/upgrade anything\&.
+.RE
+.PP
+\fB\-y, \-\-refresh\fR
+.RS 4
+Download a fresh copy of the master package list from the server(s) defined in linkman:pacman\&.conf[5]\&. This should typically be used each time you use
+\fI\-\-sysupgrade\fR
+or
+\fI\-u\fR\&. Passing two
+\fI\-\-refresh\fR
+or
+\fI\-y\fR
+flags will force a refresh of all package lists even if they are thought to be up to date\&.
+.RE
+.PP
+\fB\-\-needed\fR
+.RS 4
+Don\(cqt reinstall the targets that are already up\-to\-date\&.
+.RE
+.PP
+\fB\-\-ignore\fR <\fIpackage\fR>
+.RS 4
+Directs pacman to ignore upgrades of package even if there is one available\&. Multiple packages can be specified by separating them with a comma\&.
+.RE
+.PP
+\fB\-\-ignoregroup\fR <\fIgroup\fR>
+.RS 4
+Directs pacman to ignore upgrades of all packages in
+\fIgroup\fR
+even if there is one available\&. Multiple groups can be specified by separating them with a comma\&.
+.RE
+.SH "Handling Config Files"
+.sp
+Pacman uses the same logic as rpm to determine action against files that are designated to be backed up\&. During an upgrade, 3 md5 hashes are used for each backup file to determine the required action: one for the original file installed, one for the new file that\(cqs about to be installed, and one for the actual file existing on the filesystem\&. After comparing these 3 hashes, the follow scenarios can result:
+.PP
+original=X, current=X, new=X
+.RS 4
+All three files are the same, so overwrites are not an issue Install the new file\&.
+.RE
+.PP
+original=X, current=X, new=Y
+.RS 4
+The current file is the same as the original but the new one differs\&. Since the user did not ever modify the file, and the new one may contain improvements or bugfixes, install the new file\&.
+.RE
+.PP
+original=X, current=Y, new=X
+.RS 4
+Both package versions contain the exact same file, but the one on the filesystem has been modified\&. Leave the current file in place\&.
+.RE
+.PP
+original=X, current=Y, new=Y
+.RS 4
+The new file is identical to the current file\&. Install the new file\&.
+.RE
+.PP
+original=X, current=Y, new=Z
+.RS 4
+All three files are different, so install the new file with a
+\fI\&.pacnew\fR
+extension and warn the user\&. The user must then manually merge any necessary changes into the original file\&.
+.RE
+.SH "Configuration"
+.sp
+See linkman:pacman\&.conf[5] for more details on configuring pacman using the \fIpacman\&.conf\fR file\&.
+.SH "See Also"
+.sp
+linkman:pacman\&.conf[5], linkman:makepkg[8], linkman:libalpm[3]
+.sp
+See the pacman website at http://www\&.archlinux\&.org/pacman/ for current information on pacman and its related tools\&.
+.SH "Bugs"
+.sp
+Bugs? You must be kidding, there are no bugs in this software\&. But if we happen to be wrong, send us an email with as much detail as possible to pacman\-dev@archlinux\&.org\&.
+.SH "Authors"
+.sp
+Current maintainers:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Dan McGee <dan@archlinux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Xavier Chantry <shiningxc@gmail\&.com>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aaron Griffin <aaron@archlinux\&.org>
+.RE
+.sp
+Past contributors:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Judd Vinet <jvinet@zeroflux\&.org>
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Aurelien Foret <aurelien@archlinux\&.org>
+.RE
+.sp
+See the \fIAUTHORS\fR file for additional contributors\&.
